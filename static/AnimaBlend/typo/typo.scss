@@ -1,0 +1,78 @@
+@import url(./typo.scss);
+@import url(/button/button.scss);
+@import url(/theme/theme.scss);
+.gradiant-word-1 {
+  background: linear-gradient(
+    180deg,
+    rgba(178, 149, 241, 0.31) -24.43%,
+    rgba(1, 132, 255, 0.46) 144.03%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradiant-word-2 {
+  background: linear-gradient(90.36deg, #b295f1 -10.4%, #0184ff 110%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+// fomt size scss
+
+.text-3xs {
+  font-size: 10px;
+}
+.text-2xs {
+  font-size: 12px;
+}
+.text-xxs {
+  font-size: 14px;
+}
+.text-xs {
+  font-size: 16px;
+}
+.text-ss {
+  font-size: 18px;
+}
+.text-s {
+  font-size: 20px;
+}
+.text-sm {
+  font-size: 24px;
+}
+.text-m {
+  font-size: 30px;
+}
+.text-md {
+  font-size: 36px;
+}
+.text-l {
+  font-size: 42px;
+}
+.text-xl {
+  font-size: 50px;
+}
+
+// font weight scss
+
+.w300 {
+  font-weight: 300;
+}
+.w400 {
+  font-weight: 400;
+}
+.w500 {
+  font-weight: 500;
+}
+.w600 {
+  font-weight: 600;
+}
+.w700 {
+  font-weight: 700;
+}
+.w800 {
+  font-weight: 800;
+}
+.w900 {
+  font-weight: 900;
+}

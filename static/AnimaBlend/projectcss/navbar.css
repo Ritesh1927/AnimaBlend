@@ -19,8 +19,12 @@ li {
 }
 
 .project-header {
-  background-image: linear-gradient(to bottom, #000 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, #000 55%, rgba(0, 0, 0, 0) 100%);
   gap: 40px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
 }
 .project-header .main-logo-container {
   gap: 4px;
@@ -466,6 +470,7 @@ li {
 .search-bar-wrapper .content-category-wrapper {
   width: 100%;
   padding-top: 120px;
+  height: 100vh;
 }
 .search-bar-wrapper .content-category-wrapper #search-category-heading {
   text-align: center;
