@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    {% comment %} <link rel="stylesheet" href="/base/base.css" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'AnimaBlend/base/base.css' %}" />
+    {% comment %} <link rel="stylesheet" href="navbar.css" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'AnimaBlend/navbar.css' %}" />
+    <!-- icons cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google fonts cdn  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- upper navbar  -->
+    <header class="inline-between align-center project-header">
+      <div class="main-logo-container align-center inline">
+        <div class="logo-container align-center">
+          <img class="logo-img mt8" src="/assets/mx player.png" alt="" />
+        </div>
+        <p class="logo-name text-s">
+          <span class="text-s w800">Movies</span> Addicted
+        </p>
+      </div>
+
+      <div class="main-nav-list-container">
+        <ul class="inline-evenly">
+          <li>
+            <a class="nav-link" href="">
+              <i class="fa-solid fa-house font-awesome"></i>
+            </a>
+          </li>
+          <li><a class="nav-link" href="">Movies</a></li>
+          <li><a class="nav-link" href="">Webshow</a></li>
+          <li><a class="nav-link" href="">Trailers</a></li>
+          <li><a class="nav-link" href="">About us</a></li>
+        </ul>
+      </div>
+      <div class="login-search-wrapper">
+        <ul class="inline">
+          <li>
+            <a onclick="openSearchbar()" class="nav-link" href="#"
+              ><i class="fa-solid fa-magnifying-glass fa-lg"></i
+            ></a>
+          </li>
+          <li>
+            <a class="nav-link" href=""
+              ><i class="fa-regular fa-bell fa-lg"></i
+            ></a>
+          </li>
+
+          <button class="btn-login" onclick="showModal()">Login</button>
+        </ul>
+      </div>
+    </header>
+    <div class="overlay"></div>
+    <!-- ḷogin form -->
+    <div class="loginform inline">
+      <span id="login-close-btn" onclick="closeModal()">Skip for now </span>
+      <div class="login-content">
+        <!-- website lgog container  -->
+        <div class="login-page-logo mb15 inline align-center">
+          <img src="./assets/mx player.png" alt="" />
+          <p class="login-logo-name">
+            <span>Movies</span><span>Addicted</span>
+          </p>
+        </div>
+        <!-- ott info -->
+        <p class="login-ott-info">
+          Premium OTT service in India, where you can watch original series, TV
+          & Web shows, movies, and trending shows for free.
+        </p>
+        <p class="login-ott-info">Watch on desktop, mobile or tablet.</p>
+        <!--  signup section    -->
+        <div class="btn-container">
+          <button onclick="showSignupform()" class="signup-show-btn">
+            sign up
+          </button>
+          <button onclick="showSigninform()" class="signin-show-btn">
+            Sgin in
+          </button>
+        </div>
+      </div>
+      <form class="main-loginform-container" action="">
+        <div class="login-option">
+          <h1>Login</h1>
+          <p class="login-title">
+            Enjoy Movies Addicted exclusive features and benefits.
+          </p>
+          <div onclick="showBorder()" class="login-system-wrapper">
+            <i
+              class="fa-solid font-awesome fa-envelope"
+              style="color: #fafcff"
+            ></i>
+
+            <input
+              placeholder="Enter your mail id "
+              class="login-phone"
+              id="login-mail"
+              autocomplete="off"
+              required
+              type="email"
+              name="email"
+            />
+          </div>
+          <!-- <input type="password" /> -->
+          <p class="otp-alert">You’ll get an SMS to verify your number.</p>
+
+          <button
+            type="submit"
+            class="next-login-btn"
+            onclick="otpSection
+        ()"
+          >
+            Next
+          </button>
+          <p class="google-subtitle">Or use google for login .</p>
+          <div class="google-login-wrapper">
+            <button class="google-login-btn inline align-center">
+              <img src="/assets/google-icon.png" alt="" />
+              <p>Continue with Google</p>
+            </button>
+
+            <p class="term-wrapper">
+              By Logging in you agree to the
+              <span class="t-or-c"><a href="">T&C</a></span> and
+              <span class="t-or-c"><a href="">T&C</a></span>
+              Privacy policy
+            </p>
+            <p class="term-wrapper-2">
+              On login, all your Watch History data will be synced to the
+              server.
+            </p>
+          </div>
+        </div>
+        <div class="passward-section">
+          <h1>Login</h1>
+          <p class="login-title">
+            Enjoy Movies Addicted exclusive features and benefits.
+          </p>
+          <div class="inline">
+            Mail is :-
+            <p class="mr10" id="showmail"></p>
+            <span onclick="backLogin()"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></span>
+          </div>
+          <!-- password cotainer -->
+          <div class="passward-div">
+            <input type="password" placeholder="Enter your password" />
+          </div>
+          <input class="next-login-btn" type="button" value="Login" />
+        </div>
+      </form>
+      <!-- sign up form section  -->
+      <form class="main-signup-form-container" action="">
+        <div class="login-option">
+          <h1>Signup</h1>
+          <p class="signup-title">
+            Signup Here And Enjoy Unintrupted Services .
+          </p>
+          <div class="signup-system-wrapper">
+            <i class="fa-solid font-awesome fa-user" style="color: #fafcff"></i>
+
+            <input
+              placeholder="Enter your user name  "
+              class="login-phone"
+              type="text"
+              name="name"
+            />
+          </div>
+          <div class="signup-system-wrapper">
+            <i
+              class="fa-solid font-awesome fa-envelope"
+              style="color: #fafcff"
+            ></i>
+
+            <input
+              placeholder="Enter your mail id "
+              class="login-phone"
+              type="email"
+              name="email"
+            />
+          </div>
+          <div class="signup-system-wrapper">
+            <i class="fa-solid font-awesome fa-lock" style="color: #fafcff"></i>
+
+            <input
+              placeholder="Enter your password"
+              class="login-phone"
+              type="password"
+              name="password"
+            />
+          </div>
+          <div class="signup-system-wrapper">
+            <i
+              class="fa-solid font-awesome fa-unlock-keyhole"
+              style="color: #fafcff"
+            ></i>
+
+            <input
+              placeholder="Confirm password"
+              class="login-phone"
+              type="password"
+              name="password"
+            />
+          </div>
+          <!-- <input type="password" /> -->
+
+          <button type="submit" class="next-login-btn">Next</button>
+        </div>
+      </form>
+    </div>
+    <!-- search bar section  -->
+    <section class="search-bar-wrapper">
+      <div class="search-bar-mini-wrapper">
+        <div class="main-search-bar-container">
+          <i class="fa-solid fa-magnifying-glass fa-lg main-seach-icon"></i>
+          <span onclick="closeSearchbar()" class="close-search-bar-icon"
+            >&#10006;</span
+          >
+          <div class="input-entry-wrap">
+            <input
+              placeholder="Search for a Web Shows, Movie & Genre etc"
+              class="anime-search-function"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="content-category-wrapper">
+        <h1 id="search-category-heading">Search By Category</h1>
+        <div class="main-contnet-wrapper">
+          <a class="content-image-type" href="#">
+            <img
+              src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/web-shows.png"
+              alt=""
+            />
+            <span> dramatic </span>
+          </a>
+          <a class="content-image-type" href="#">
+            <img
+              src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/movies.png"
+              alt=""
+            />
+            <span> action </span>
+          </a>
+          <a class="content-image-type" href="#">
+            <img
+              src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/shorts.png"
+              alt=""
+            />
+            <span> romantic </span>
+          </a>
+          <a class="content-image-type" href="#">
+            <img
+              src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/live-tv.png"
+              alt=""
+            />
+            <span> comedy </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  
+  </body>
+  <script src="script.js"></script>
+</html>
