@@ -1,6 +1,6 @@
 @import url(./typo.scss);
-@import url(/button/button.scss);
-@import url(/theme/theme.scss);
+@import url(../button/button.scss);
+@import url(../theme/theme.scss);
 .gradiant-word-1 {
   background: linear-gradient(180deg, rgba(178, 149, 241, 0.31) -24.43%, rgba(1, 132, 255, 0.46) 144.03%);
   -webkit-background-clip: text;

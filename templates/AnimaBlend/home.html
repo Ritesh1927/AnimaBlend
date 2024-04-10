@@ -6,9 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=\, initial-scale=1.0" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/base/base.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimeBlend/projectcss/navbar.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimeBlend/projectcss/main.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimeBlend/projectcss/myslick.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/navbar.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/myslick.css' %}" />
 
 
   <!-- icons cdn  -->
@@ -38,7 +38,7 @@
   <header class="inline-between align-center project-header">
     <div class="main-logo-container align-center inline">
       <div class="logo-container align-center">
-        <img class="logo-img mt8" src="/assets/mx player.png" alt="" />
+        <img class="logo-img mt8" src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
       </div>
       <p class="logo-name text-s">
         <span class="text-s w800">Movies</span> Addicted
@@ -78,7 +78,7 @@
     <div class="login-content">
       <!-- website lgog container  -->
       <div class="login-page-logo mb15 inline align-center">
-        <img src="./assets/mx player.png" alt="" />
+        <img src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
         <p class="login-logo-name">
           <span>Movies</span><span>Addicted</span>
         </p>
@@ -121,7 +121,7 @@
         <p class="google-subtitle">Or use google for login .</p>
         <div class="google-login-wrapper">
           <button class="google-login-btn inline align-center">
-            <img src="/assets/google-icon.png" alt="" />
+            <img src="{% static 'AnimaBlend/assets/google-icon.png' %}" alt="" />
             <p>Continue with Google</p>
           </button>
 
@@ -227,7 +227,7 @@
         <img src="assets/images/test_pic1.jpg" alt="">
       </div> -->
       <div class="item carousel-item">
-        <img src=" assets/images/test-pic2.jpg" alt="">
+        <img src="{% static 'AnimaBlend/assets/images/test-pic2.jpg' %}" alt="">
       </div>
     </div>
     </div>
@@ -237,7 +237,7 @@
     <div class="card-container ">
       <div class=" card-body ">
         <div class="card-imgbox ">
-          <img class="card-img " src="assets/cards-images/card-img2.jpg" alt="">
+          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
         </div>
         <div class="content ">
           <h2>NARUTO</h2>
@@ -285,8 +285,8 @@
     })
   </script>
   <!-- nav bar js part  -->
-  <script src="/Project Js/script.js"></script>
-  <script src="/Project Js/myslick.js"></script>
+  <script src="{% static 'AnimaBlend/Project Js/script.js' %}"></script>
+  <script src="{% static 'AnimaBlend/Project Js/myslick.js' %}"></script>
   <script src="/prp"></script>
 
 </body>
