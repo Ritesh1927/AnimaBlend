@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/navbar.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/main.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/myslick.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime.css' %}" />
 
 
   <!-- icons cdn  -->
@@ -41,7 +42,7 @@
         <img class="logo-img mt8" src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
       </div>
       <p class="logo-name text-s">
-        <span class="text-s w800">Movies</span> Addicted
+        <span class="text-s w800">Anime</span> Blend
       </p>
     </div>
 
@@ -232,6 +233,15 @@
     </div>
     </div>
   </section>
+  <!-- animation part  -->
+  <div id="anime-main">
+    <div id="page">
+      <canvas></canvas>
+    </div>
+    <div id="page1"></div>
+    <div id="page2"></div>
+    <div id="page3"></div>
+  </div>
   <!-- main div of body  -->
   <section class="card-main-wrapper">
     <div class="card-container ">
@@ -256,6 +266,15 @@
 
 
   <!-- ///////////////////////////////////////////////////////// -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -287,6 +306,7 @@
   <!-- nav bar js part  -->
   <script src="{% static 'AnimaBlend/Project Js/script.js' %}"></script>
   <script src="{% static 'AnimaBlend/Project Js/myslick.js' %}"></script>
+  <script src="{% static 'AnimaBlend/Project Js/anime.js' %}"></script>
   <script src="/prp"></script>
 
 </body>
