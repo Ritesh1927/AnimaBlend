@@ -1,6 +1,6 @@
-@import url('../typo/typo.css');
-@import url('../theme/theme.css');
-@import url('../button/button.scss');
+@import url("../typo/typo.css");
+@import url(../theme/theme.css);
+@import url(../button/button.scss);
 * {
   margin: 0;
   padding: 0;
