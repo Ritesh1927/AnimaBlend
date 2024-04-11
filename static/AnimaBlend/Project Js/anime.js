@@ -48,7 +48,7 @@ function locomotive() {
   
   function files(index) {
     var data = `
-       ./male0001.png
+       ../assets/anime-img/male0001.png
        ./male0002.png
        ./male0003.png
        ./male0004.png
