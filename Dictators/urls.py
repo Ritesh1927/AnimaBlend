@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from AnimaBlend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('AnimaBlend.urls')),
+    path('',views.home2,name=''),
+    path('home', include('AnimaBlend.urls')),
 ]
