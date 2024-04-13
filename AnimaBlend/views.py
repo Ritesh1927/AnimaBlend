@@ -5,5 +5,5 @@ from django.shortcuts import render, HttpResponse
 def home(request):
     return render(request,'AnimaBlend/home.html')
 
-def home2(request):
-    return render(request, 'AnimaBlend/home2.html')
+def index(request):
+    return render(request, 'AnimaBlend/index.html')
