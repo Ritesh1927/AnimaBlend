@@ -2,7 +2,6 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-  font-family: gilroy;
 }
 
 html, body {
@@ -13,6 +12,7 @@ html, body {
 #main {
   position: relative;
   overflow: hidden;
+  font-family: gilroy;
 }
 
 #page {
