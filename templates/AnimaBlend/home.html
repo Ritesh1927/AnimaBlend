@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/main.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/myslick.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime-btn.css' %}" />
 
 
   <!-- icons cdn  -->
@@ -224,24 +225,22 @@
   <!-- slider part -->
   <section class="banner-container">
     <div class="owl-carousel owl-theme">
-      <!-- <div class="item carousel-item">
-        <img src="assets/images/test_pic1.jpg" alt="">
-      </div> -->
       <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test-pic2.jpg' %}" alt="">
+        <img src="{% static 'AnimaBlend/assets/images/test3.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test4.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test5.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test6.jpg' %}" alt="">
       </div>
     </div>
     </div>
   </section>
-  <!-- animation part  -->
-  <div id="anime-main">
-    <div id="page">
-      <canvas></canvas>
-    </div>
-    <div id="page1"></div>
-    <div id="page2"></div>
-    <div id="page3"></div>
-  </div>
+
   <!-- main div of body  -->
   <section class="card-main-wrapper">
     <div class="card-container ">
@@ -257,8 +256,8 @@
           <a href="#">read more </a>
         </div>
       </div>
-
     </div>
+    <button class="anime-button btn3xs">csk </button>
   </section>
 
 
@@ -289,7 +288,7 @@
       nav: true,
       dots: true,
       autoplay: true,
-      autoplayTimeout: 10000,
+      autoplayTimeout: 2500,
       responsive: {
         0: {
           items: 1
