@@ -21,9 +21,9 @@ class Episode(models.Model):
 
 # Signal receiver function to update total_episodes field
 
-# @receiver(post_save, sender=Episode)
-# def update_total_episodes(sender, instance, created, **kwargs):
-#     if created:
-#         anime = instance.anime
-#         anime.total_episodes = Episode.objects.filter(anime=anime).count()
-#         anime.save()
+@receiver(post_save, sender=Episode)
+def update_total_episodes(sender, instance, created, **kwargs):
+    if created:
+        anime = instance.anime
+        anime.total_episodes = Episode.objects.filter(anime=anime).count()
+        anime.save()
