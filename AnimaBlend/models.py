@@ -1,3 +1,29 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
-# Create your models here.
+class Anime(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    total_episodes = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.title
+
+class Episode(models.Model):
+    anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    episode_number = models.PositiveIntegerField()
+    video_path = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.anime.title} - Episode {self.episode_number}: {self.title}"
+
+# Signal receiver function to update total_episodes field
+
+# @receiver(post_save, sender=Episode)
+# def update_total_episodes(sender, instance, created, **kwargs):
+#     if created:
+#         anime = instance.anime
+#         anime.total_episodes = Episode.objects.filter(anime=anime).count()
+#         anime.save()
