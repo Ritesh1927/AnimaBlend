@@ -7,3 +7,6 @@ def home(request):
 
 def index(request):
     return render(request, 'AnimaBlend/index.html')
+
+def play(request):
+    return render(request,'AnimaBlend/play.html')

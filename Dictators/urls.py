@@ -19,6 +19,8 @@ from AnimaBlend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index,name=''),
-    path('home', include('AnimaBlend.urls')),
+    path('',include('AnimaBlend.urls')),
+    # path('',views.index,name=''),
+    # path('home', include('AnimaBlend.urls')),
+    # path('play',include('AnimaBlend.urls')),
 ]
