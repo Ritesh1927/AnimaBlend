@@ -10,7 +10,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 100px 50px;
-  padding: 100px 50px;
+  padding: 50px 50px;
 }
 .card-main-wrapper .card-container .card-body {
   position: relative;
@@ -28,11 +28,32 @@
 .card-main-wrapper .card-container .card-body .content {
   position: absolute;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 25px 15px;
   text-align: center;
-  top: 325px;
-  overflow: hidden;
+  top: 245px;
   height: 55px;
+}
+.card-main-wrapper .card-container .card-body .content .anime-button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  background-image: linear-gradient(to left, #0079ff, #2689a5);
+  transition: all 0.2s ease;
+  width: 150px;
+  height: 50px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.card-main-wrapper .card-container .card-body .content .anime-button:hover {
+  width: 165px;
+}
+.card-main-wrapper .card-container .card-body .anime-name {
+  position: absolute;
+  bottom: 10px;
 }
 .card-main-wrapper .card-container .card-body .card-imgbox {
   position: absolute;
@@ -45,6 +66,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
+  z-index: 9;
 }
 .card-main-wrapper .card-container .card-body .card-imgbox .card-img {
   position: absolute;
@@ -56,9 +78,9 @@
      object-fit: cover;
 }
 .card-main-wrapper .card-container .card-body:hover {
-  height: 400px;
+  height: 390px;
 }
 .card-main-wrapper .card-container .card-body:hover .card-imgbox {
-  top: -100px;
-  scale: 0.75;
+  top: -50px;
+  scale: 0.85;
 }/*# sourceMappingURL=main.css.map */
