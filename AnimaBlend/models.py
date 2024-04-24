@@ -15,7 +15,7 @@ class Episode(models.Model):
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     episode_number = models.PositiveIntegerField()
-    video_sub = models.CharField(max_length=200)
+    video_sub = models.CharField(max_length=200,blank=True)
     video_dub = models.CharField(max_length=200)
 
     def save(self, *args, **kwargs):
