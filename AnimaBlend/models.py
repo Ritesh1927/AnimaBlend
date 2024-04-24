@@ -18,14 +18,12 @@ class Episode(models.Model):
     video_sub = models.CharField(max_length=200)
     video_dub = models.CharField(max_length=200)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.anime.total_episodes = Episode.objects.filter(anime=self.anime).count()
+        self.anime.save()
+
     def __str__(self):
         return f"{self.anime.title} - Episode {self.episode_number}: {self.title}"
 
-# Signal receiver function to update total_episodes field
 
-@receiver(post_save, sender=Episode)
-def update_total_episodes(sender, instance, created, **kwargs):
-    if created:
-        anime = instance.anime
-        anime.total_episodes = Episode.objects.filter(anime=anime).count()
-        anime.save()
