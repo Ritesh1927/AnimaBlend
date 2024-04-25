@@ -1,19 +1,19 @@
 .card-main-wrapper {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 25px 30px;
+  flex-wrap: wrap;
 }
 .card-main-wrapper .card-container {
   position: relative;
+  width: 20%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 100px 50px;
-  padding: 50px 50px;
 }
 .card-main-wrapper .card-container .card-body {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
