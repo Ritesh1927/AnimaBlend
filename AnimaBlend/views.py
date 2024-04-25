@@ -10,3 +10,6 @@ def index(request):
 
 def play(request):
     return render(request,'AnimaBlend/play.html')
+
+def details(request):
+    return render(request,'AnimaBlend/details.html')
