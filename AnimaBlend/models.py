@@ -16,7 +16,7 @@ class Episode(models.Model):
     title = models.CharField(max_length=200)
     episode_number = models.PositiveIntegerField()
     video_sub = models.CharField(max_length=200,blank=True)
-    video_dub = models.CharField(max_length=200)
+    video_dub = models.CharField(max_length=200,blank=True)
 
     class Meta:
         ordering = ['episode_number']  
