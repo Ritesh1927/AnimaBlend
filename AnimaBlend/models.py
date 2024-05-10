@@ -18,6 +18,9 @@ class Episode(models.Model):
     video_sub = models.CharField(max_length=200,blank=True)
     video_dub = models.CharField(max_length=200)
 
+    class Meta:
+        ordering = ['episode_number']  
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         self.anime.total_episodes = Episode.objects.filter(anime=self.anime).count()
