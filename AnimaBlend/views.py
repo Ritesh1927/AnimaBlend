@@ -10,9 +10,7 @@ def index(request):
     return render(request, 'AnimaBlend/index.html')
 
 def play(request):
-    anime = Anime.object.get(title='Vinland Saga Season 1')
-    episode = Episode.object.filter(anime=anime)
-    return render(request,'AnimaBlend/play.html',{'episodes':episode})
+    return render(request,'AnimaBlend/play.html')
 
 def details(request):
     return render(request,'AnimaBlend/details.html')
