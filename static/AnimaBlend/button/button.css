@@ -1,0 +1,162 @@
+@import url(../theme/theme.css);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+.button {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+  padding: 8px 16px;
+  border: 1px solid gray;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-3xs {
+  padding: 6px 16px;
+}
+
+.btn-2xs {
+  padding: 8px 20px;
+}
+
+.btn-xs {
+  padding: 8px 24px;
+}
+
+.btn-x {
+  padding: 10px 28px;
+}
+
+.btn-sm {
+  padding: 12px 32px;
+}
+
+.btn-s {
+  padding: 14px 36px;
+}
+
+.btn-m {
+  padding: 16px 40px;
+}
+
+.btn-l {
+  padding: 18px 44px;
+}
+
+.btn-lg {
+  padding: 20px 48px;
+}
+
+.btn-xl {
+  padding: 22px 52px;
+}
+
+.btn-xxl {
+  padding: 24px 56px;
+}
+
+.btn-xsmall {
+  padding: 28px 65px;
+}
+
+.btn-small {
+  padding: 31px 70px;
+}
+
+.btn-md {
+  padding: 36px 75px;
+}
+
+.btn-oval {
+  border-radius: 30px;
+}
+
+.btn-transparent {
+  background: transparent !important;
+}
+
+.button-primary {
+  border-color: #146efa;
+  background-color: #146efa;
+  color: white;
+}
+.button-primary:hover {
+  background-color: #3d89ff;
+  border-color: #3d89ff;
+}
+
+.button-secondary {
+  border-color: #14a032;
+  background-color: #14a032;
+  color: white;
+}
+.button-secondary:hover {
+  background-color: #3fab56;
+  border-color: #3fab56;
+}
+
+.button-red {
+  border-color: #d1332e;
+  background-color: #d1332e;
+  color: white;
+}
+.button-red:hover {
+  background-color: #dc6460;
+  border-color: #dc6460;
+}
+
+.button-gray {
+  border-color: #2f2f2f;
+  background-color: #2f2f2f;
+  color: white;
+}
+.button-gray:hover {
+  background-color: #9c9c9c;
+  border-color: #9c9c9c;
+}
+
+.button-base {
+  background-color: #2f2f2f;
+  border-color: #2f2f2f;
+  color: white;
+}
+.button-base:hover {
+  background-color: #5c5c5c;
+  border-color: #5c5c5c;
+}
+
+.button-o-primary {
+  background: white;
+  border-color: #146efa;
+  color: #146efa;
+}
+.button-o-primary:hover {
+  background: #146efa !important;
+  border-color: #146efa;
+  color: white;
+}
+
+.button-o-secondary {
+  background: white;
+  border-color: #14a032;
+  color: #14a032;
+}
+.button-o-secondary:hover {
+  background: #14a032 !important;
+  border-color: #14a032;
+  color: white;
+}
+
+.button-o-red {
+  background: white;
+  border-color: #d1332e;
+  color: #d1332e;
+}
+.button-o-red:hover {
+  background: #d1332e !important;
+  border-color: #d1332e;
+  color: white;
+}
+
+/* Import Google font - Poppins *//*# sourceMappingURL=button.css.map */

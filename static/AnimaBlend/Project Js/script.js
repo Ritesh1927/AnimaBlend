@@ -66,3 +66,12 @@ function showSigninform() {
     .querySelector(".signin-show-btn")
     .classList.remove("show-signin-show-btn");
 }
+
+const button = document.querySelector(".anime-button");
+button.addEventListener("click", (e) => {
+  e.preventDefault;
+  button.classList.add("animate");
+  setTimeout(() => {
+      button.classList.remove("animate");
+  }, 800);
+});

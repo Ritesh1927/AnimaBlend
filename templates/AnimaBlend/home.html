@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/navbar.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/main.css' %}" />
   <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/myslick.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime.css' %}" />
+  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime-btn.css' %}" />
 
 
   <!-- icons cdn  -->
@@ -41,7 +43,7 @@
         <img class="logo-img mt8" src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
       </div>
       <p class="logo-name text-s">
-        <span class="text-s w800">Movies</span> Addicted
+        <span class="text-s w800">Anima Blend</span>
       </p>
     </div>
 
@@ -53,9 +55,9 @@
           </a>
         </li>
         <li><a class="nav-link" href="">Movies</a></li>
-        <li><a class="nav-link" href="">Webshow</a></li>
-        <li><a class="nav-link" href="">Trailers</a></li>
-        <li><a class="nav-link" href="">About us</a></li>
+        <li><a class="nav-link" href="">Global Chat</a></li>
+        <li><a class="nav-link" href="">Series</a></li>
+        <li><a class="nav-link" href="">About</a></li>
       </ul>
     </div>
     <div class="login-search-wrapper">
@@ -223,15 +225,22 @@
   <!-- slider part -->
   <section class="banner-container">
     <div class="owl-carousel owl-theme">
-      <!-- <div class="item carousel-item">
-        <img src="assets/images/test_pic1.jpg" alt="">
-      </div> -->
       <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test-pic2.jpg' %}" alt="">
+        <img src="{% static 'AnimaBlend/assets/images/test3.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test4.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test5.jpg' %}" alt="">
+      </div>
+      <div class="item carousel-item">
+        <img src="{% static 'AnimaBlend/assets/images/test6.jpg' %}" alt="">
       </div>
     </div>
     </div>
   </section>
+
   <!-- main div of body  -->
   <section class="card-main-wrapper">
     <div class="card-container ">
@@ -240,22 +249,93 @@
           <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
         </div>
         <div class="content ">
-          <h2>NARUTO</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugit beatae velit reprehenderit
-            dolores, fuga consequuntur ut minima dignissimos sapiente adipisci, voluptatibus repellat tempora, pariatur
-            libero eius quod quo vitae!</p>
-          <a href="#">read more </a>
+          <a class="anime-button " href="details">watch now</a>
+          <!-- <button class="anime-button btn3xs"> </button> -->
+          <!-- <a href="#">read more </a> -->
         </div>
+        <h2 class="anime-name">NARUTO</h2>
       </div>
-
     </div>
+    <div class="card-container ">
+      <div class=" card-body ">
+        <div class="card-imgbox ">
+          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+        </div>
+        <div class="content ">
+          <a class="anime-button " href="play">watch now</a>
+          <!-- <button class="anime-button btn3xs"> </button> -->
+          <!-- <a href="#">read more </a> -->
+        </div>
+        <h2 class="anime-name">NARUTO</h2>
+      </div>
+    </div>
+    <div class="card-container ">
+      <div class=" card-body ">
+        <div class="card-imgbox ">
+          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+        </div>
+        <div class="content ">
+          <a class="anime-button " href="play">watch now</a>
+          <!-- <button class="anime-button btn3xs"> </button> -->
+          <!-- <a href="#">read more </a> -->
+        </div>
+        <h2 class="anime-name">NARUTO</h2>
+      </div>
+    </div>
+    <div class="card-container ">
+      <div class=" card-body ">
+        <div class="card-imgbox ">
+          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+        </div>
+        <div class="content ">
+          <a class="anime-button " href="play">watch now </a>
+          <!-- <button class="anime-button btn3xs"> </button> -->
+          <!-- <a href="#">read more </a> -->
+        </div>
+        <h2 class="anime-name">NARUTO</h2>
+      </div>
+    </div>
+    <div class="card-container ">
+      <div class=" card-body ">
+        <div class="card-imgbox ">
+          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+        </div>
+        <div class="content ">
+          <a class="anime-button " href="play">watch now</a>
+          <!-- <button class="anime-button btn3xs"> </button> -->
+          <!-- <a href="#">read more </a> -->
+        </div>
+        <h2 class="anime-name">NARUTO</h2>
+      </div>
+    </div>
+
   </section>
 
 
+  <!-- 
+  <section class="card-main-wrapper">
+    <div class="card-container "  >
+      <div class="card-imgbox ">
+        <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+      </div>
+      <div class="card-body">
+        <h2>NARUTO</h2>
+      </div>
+    </div> -->
 
-
+  </section>
+  <button class="anime-button btn3xs"><a href="play">watch now</a></button>
 
   <!-- ///////////////////////////////////////////////////////// -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -270,7 +350,7 @@
       nav: true,
       dots: true,
       autoplay: true,
-      autoplayTimeout: 10000,
+      autoplayTimeout: 2500,
       responsive: {
         0: {
           items: 1
@@ -284,10 +364,10 @@
       }
     })
   </script>
+
   <!-- nav bar js part  -->
-  <script src="{% static 'AnimaBlend/Project Js/script.js' %}"></script>
-  <script src="{% static 'AnimaBlend/Project Js/myslick.js' %}"></script>
-  <script src="/prp"></script>
+  <script src="{% static 'AnimaBlend/Project%20Js/script.js' %}"></script>
+  <script src="{% static 'AnimaBlend/Project%20Js/myslick.js' %}"></script>
 
 </body>
 

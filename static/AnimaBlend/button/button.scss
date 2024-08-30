@@ -1,4 +1,5 @@
-@import url(../theme/theme.scss);
+@import url(../theme/theme.css);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 // main class of  button
 .button {
@@ -63,77 +64,80 @@
   background: transparent !important;
 }
 .button-primary {
-  border-color: $primary;
-  background-color: $primary;
-  color: $white;
+  border-color: #146efa;
+  background-color: #146efa;
+  color: #ffff;
   &:hover {
     background-color: #3d89ff;
     border-color: #3d89ff;
   }
 }
 .button-secondary {
-  border-color: $secondary;
-  background-color: $secondary;
-  color: $white;
+  border-color: #14a032;
+  background-color: #14a032;
+  color:#ffff;
   &:hover {
     background-color: #3fab56;
     border-color: #3fab56;
   }
 }
 .button-red {
-  border-color: $red;
-  background-color: $red;
-  color: $white;
+  border-color: #d1332e;
+  background-color: #d1332e;
+  color:#ffff;
   &:hover {
     background-color: #dc6460;
     border-color: #dc6460;
   }
 }
 .button-gray {
-  border-color: $gray;
-  background-color: $gray;
-  color: $white;
+  border-color: #2f2f2f;
+  background-color: #2f2f2f;
+  color:#ffff;
   &:hover {
     background-color: #9c9c9c;
     border-color: #9c9c9c;
   }
 }
 .button-base {
-  background-color: $base;
-  border-color: $base;
-  color: $white;
+  background-color: #2f2f2f;
+  border-color: #2f2f2f;
+  color:#ffff;
   &:hover {
     background-color: #5c5c5c;
     border-color: #5c5c5c;
   }
 }
 .button-o-primary {
-  background: $white;
-  border-color: $primary;
-  color: $primary;
+  background:#ffff;
+  border-color: #146efa;
+  color: #146efa;
   &:hover {
-    background: $primary !important;
-    border-color: $primary;
-    color: $white;
+    background: #146efa !important;
+    border-color: #146efa;
+    color:#ffff;
   }
 }
 .button-o-secondary {
-  background: $white;
-  border-color: $secondary;
-  color: $secondary;
+  background:#ffff;
+  border-color: #14a032;
+  color: #14a032;
   &:hover {
-    background: $secondary !important;
-    border-color: $secondary;
-    color: $white;
+    background: #14a032 !important;
+    border-color: #14a032;
+    color:#ffff;
   }
 }
 .button-o-red {
-  background: $white;
-  border-color: $red;
-  color: $red;
+  background:#ffff;
+  border-color: #d1332e;
+  color: #d1332e;
   &:hover {
-    background: $red !important;
-    border-color: $red;
-    color: $white;
+    background: #d1332e !important;
+    border-color: #d1332e;
+    color:#ffff;
   }
 }
+
+// animate button 
+/* Import Google font - Poppins */

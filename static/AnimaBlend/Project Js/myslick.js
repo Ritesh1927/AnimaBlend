@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
   $(".slick-carousel").slick({
     dots: true,
@@ -7,3 +9,5 @@ $(document).ready(function () {
     cssEase: "linear",
   });
 });
+
+
