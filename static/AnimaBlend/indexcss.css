@@ -1,3 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* full_nav_css */
+
+.full-nav{
+  display: flex;
+}
+
+.branding-nav{
+  padding: 10px;
+  padding-left: 20px;
+  width: 40%;
+  background-color: #333;
+  gap: 20px;
+  margin: 0;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.branding-nav a{
+  text-decoration: none;
+}
+
+.dic{
+  color: #fff;
+}
+
+.tators{
+  color: #EA4C89;
+}
+
+/* nav_bar_css_starts_here */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #EA4C89;
+}
+
+/* nav_bar_css_ends_here */
+
 .button-1 {
     background-color: #EA4C89;
     border-radius: 8px;
@@ -8,7 +75,7 @@
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
     height: 40px;
     line-height: 20px;
     list-style: none;
@@ -24,8 +91,13 @@
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  
+
   .button-1:hover,
   .button-1:focus {
     background-color: #F082AC;
+  }
+
+  .home-button {
+    padding: 5px;
+    font-weight: bold;
   }
