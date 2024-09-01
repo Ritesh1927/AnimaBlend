@@ -4,16 +4,23 @@ body {
   background-color: #fff;
 }
 
+
 /* full_nav_css */
 
-.full-nav{
-  margin: 3px;
+.full-nav {
+  margin: 1px;
   display: flex;
   border-radius: 12px;
   background-color: #333;
+  position: sticky;
+  top: 0;
+  border-color: #fff;
+  border-width: 2px;
+  border-style: solid;
+  z-index: 999;
 }
 
-.branding-nav{
+.branding-nav {
   padding: 10px;
   padding-left: 20px;
   width: 40%;
@@ -23,16 +30,20 @@ body {
   font-size: larger;
 }
 
-.branding-nav a{
+.branding-nav a {
   text-decoration: none;
 }
 
-.dic{
+.dic {
   color: #fff;
 }
 
-.tators{
-  color: #EA4C89;
+.dic2 {
+  color: #333;
+}
+
+.tators {
+  color: #ea4c89;
 }
 
 /* nav_bar_css_starts_here */
@@ -62,75 +73,126 @@ body {
 }
 
 .nav-links a:hover {
-  color: #EA4C89;
+  color: #ea4c89;
 }
 
 /* nav_bar_css_ends_here */
 
-
 /* welcome_css_starts_here */
 
-.welcome{
-  background-image: url(./assets/luffy.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 95vh;
-    border-radius: 20px;
-    margin: 3px;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-    font-size: 100px;
-    font-weight: bolder;
-    font-style: oblique;
+.welcome {
+  background-image: url(./assets/index-images/luffy.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 95vh;
+  border-radius: 20px;
+  margin: 1px 3px 3px 3px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 100px;
+  font-weight: bolder;
+  font-style: oblique;
 }
 
-.welcome-1{
+.welcome-1 {
   color: #fff;
 }
-.welcome-2{
-  color: #EA4C89;
+.welcome-2 {
+  color: #ea4c89;
+  /* color: #333; */
 }
-.welcome-3{
+.welcome-3 {
   color: #fff;
 }
-.welcome-4{
-  color: #EA4C89;
+.welcome-4 {
+  color: #ea4c89;
+  /* color: #333; */
+}
+
+/* welcome_css_end_here */
+
+/* AnimaChat_css_starts_here */
+
+.anima-chat {
+  border-radius: 12px;
+  margin: 90px;
+  text-align: center;
+}
+
+.anima-chat-header{
+  text-align: center;
+  font-size: 40px;
+}
+
+.anima-chat-container{
+  display: flex;
+  justify-content: center;
+}
+
+.anima-chat-image {
+  margin: 20px;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anima-chat-image img{
+  mix-blend-mode: multiply;
+}
+
+.anima-chat-text{
+  margin: 20px;
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 40px;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 .button-1 {
-    background-color: #EA4C89;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
+  background-color: #ea4c89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-  .button-1:hover,
-  .button-1:focus {
-    background-color: #F082AC;
-  }
+.button-1:hover,
+.button-1:focus {
+  background-color: #f082ac;
+}
 
-  .home-button {
-    padding: 5px;
-    font-weight: bold;
-  }
+.home-button {
+  padding: 5px;
+  font-weight: bold;
+}

@@ -14,7 +14,7 @@
     <div class="full-nav">
       <nav class="branding-nav">
         <a href="">
-        <span class="dic">Dic</span><span class="tators">tators</span>
+          <span class="dic">Dic</span><span class="tators">tators</span>
         </a>
       </nav>
       <nav class="navbar">
@@ -27,9 +27,8 @@
         </ul>
       </nav>
     </div>
-    {% comment %} nav_bar_ends_here {% endcomment %}
-
-    {% comment %} welcome_things_start_here {% endcomment %}
+    {% comment %} nav_bar_ends_here {% endcomment %} {% comment %}
+    welcome_things_start_here {% endcomment %}
 
     <div class="welcome">
       <div class="welcome-1">Welcome</div>
@@ -38,10 +37,61 @@
       <div class="welcome-4">Anime</div>
     </div>
 
-    <div class="home-button">
-      <a href="home"
-        ><button class="button-1" role="button">Explore Anime</button></a
-      >
+    {% comment %} AnimaChat_html_starts_here {% endcomment %}
+
+    <div class="anima-chat">
+      <div class="anima-chat-header">
+        Get Started with <span class="dic2">Anima</span
+        ><span class="tators">Chat</span>
+      </div>
+      <div class="anima-chat-container">
+        <div class="anima-chat-image">
+          <img src="{% static "AnimaBlend/assets/index-images/coolchat.png" %}">
+        </div>
+        <div class="anima-chat-text">
+          <div class="anima-chat-text1">
+            Join The <br />
+            Global <br />
+            Chat <br />
+            <span class="dic2">Anima</span><span class="tators">Chat</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-button">
+        <a href=""><button class="button-1" role="button">Join Chat</button></a>
+      </div>
     </div>
+
+    {% comment %} AnimaChat_html_ends_here {% endcomment %}
+
+    {% comment %} AnimeBlend_html_starts_here {% endcomment %}
+
+    <div class="anima-chat">
+      <div class="anima-chat-header">
+        <span class="dic2">Anima</span
+        ><span class="tators">Blend</span>
+      </div>
+      <div class="anima-chat-container">
+        <div class="anima-chat-image">
+          <img src="{% static "AnimaBlend/assets/index-images/anime.jpg" %}" width="360px" height="300px">
+        </div>
+        <div class="anima-chat-text">
+          <div class="anima-chat-text1">
+            Explore The <br />
+            World of <br />
+            Anime <br />
+            with <br/>
+            <span class="dic2">Anima</span><span class="tators">Blend</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-button">
+        <a href=""><button class="button-1" role="button">Explore Anime</button></a>
+      </div>
+    </div>
+
+    {% comment %} AnimeBlend_html_ends_here {% endcomment %}
+
+
   </body>
 </html>
