@@ -4,7 +4,6 @@ body {
   background-color: #fff;
 }
 
-
 /* full_nav_css */
 
 .full-nav {
@@ -116,16 +115,16 @@ body {
 
 .anima-chat {
   border-radius: 12px;
-  margin: 90px;
+  margin: 100px;
   text-align: center;
 }
 
-.anima-chat-header{
+.anima-chat-header {
   text-align: center;
   font-size: 40px;
 }
 
-.anima-chat-container{
+.anima-chat-container {
   display: flex;
   justify-content: center;
 }
@@ -141,11 +140,11 @@ body {
   align-items: center;
 }
 
-.anima-chat-image img{
+.anima-chat-image img {
   mix-blend-mode: multiply;
 }
 
-.anima-chat-text{
+.anima-chat-text {
   margin: 20px;
   border-radius: 20px;
   width: 300px;
@@ -159,9 +158,81 @@ body {
   font-weight: bold;
 }
 
+/* anima_chat_css_ends_here */
+
+/* paralax_background_css_starts_here */
+
+.paralax-section {
+  background-image: url("assets/index-images/anime2.jpg");
+  background-size: 100%;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  transition: all 0.7s linear;
+  text-align: center;
+}
+
+.paralax-relative{
+  position: relative;
+  top: 20px;
+  opacity: 0.6;
+}
+
+.paralax-section-heading{
+  font-weight: 600;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 12px;
+  font-style: italic;
+  background-color: #fff;
+}
+
+.paralax-text{
+  margin: 20px 0px 15px 0px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  font-style: oblique;
+  opacity: 0.9;
+}
+
+
+/* paralax_background_css_ends_here */
+
+/* About_section_css_start_here */
+
+.about-section{
+  background-image: url("assets/index-images/scenery.jpeg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 85vh;
+  margin: 3px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.about-heading{
+  font-style: italic;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.about-text {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  word-spacing: 5px;
+  line-height: 1.5;
+}
+
+/* About_section_css_ends_here */
+
 .button-1 {
   background-color: #ea4c89;
-  border-radius: 8px;
+  border-radius: 10px;
   border-style: none;
   box-sizing: border-box;
   color: #ffffff;
