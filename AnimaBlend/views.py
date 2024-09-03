@@ -14,3 +14,6 @@ def play(request):
 
 def details(request):
     return render(request,'AnimaBlend/details.html')
+
+def search(request):
+    return render(request, 'AnimaBlend/search.html')

@@ -20,12 +20,18 @@
       <nav class="navbar">
         <ul class="nav-links">
           <li><a href="#about">AnimaChat</a></li>
-          <li><a href="#services">AnimaBlend</a></li>
-          <li><a href="home">Home</a></li>
+          <li><a href="home">AnimaBlend</a></li>
+          <li><a href="/"><img src="{% static "AnimaBlend/assets/index-images/debian.ico" %}" class="debian"></a></li>
           <li><a href="#portfolio">Community</a></li>
-          <li><a href="#contact">About</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
+      <div class="search">
+        <form name="search-form" method="get" action="search">
+          <input type="text" placeholder="Search..." name="search">
+          <button type="submit">Go</button>
+        </form>
+      </div>
     </div>
     {% comment %} nav_bar_ends_here {% endcomment %} {% comment %}
     welcome_things_start_here {% endcomment %}
@@ -118,7 +124,7 @@
 
     {% comment %} About_section_html_starts_here {% endcomment %}
 
-    <div class="about-section">
+    <div class="about-section" id="about">
       <div class="about-heading"><span class="dic">Ab</span><span class="tators">out</span></div>
       <div class="about-text">
         This site is dedicated to <br/>
