@@ -46,13 +46,33 @@
     {% comment %} search_html_starts_here {% endcomment %}
 
     <div class="search-result">
-        <div class="card">
-            <div class="card-image">
-                <img src="{% static "AnimaBlend/assets/search-images/search-anime2.jpg" %}" alt="Show Image">
-            </div>
-            <div class="card-title">Anime</div>
-            <div class="card-episodes">Episodes: 10</div>
+
+      {% if animes %}
+  <div class="card_row">
+    {% for anime in animes %}
+      {% if forloop.counter|divisibleby:4 and not forloop.first %}
         </div>
+        <div class="card_row">
+      {% endif %}
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ anime.thumbnail }}" alt="Show Image">
+        </div>
+        <div class="card-title">{{ anime.title }}</div>
+        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
+      </div>
+
+      {% if forloop.counter|divisibleby:4 and forloop.last %}
+        </div>
+      {% endif %}
+      
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="search-no">No search Results found</div>
+{% endif %}
+
     </div>
 
   </body>
