@@ -4,21 +4,26 @@ body {
   background-color: #fff;
 }
 
+.main-content{
+  width: 100%;
+}
+
 /* full_nav_css */
 
 .full-nav {
-  margin: 1px;
-  padding: 10px 20px 10px 20px;
+  border: 2px solid #fff;
+  height: 7%;
+  padding: 0px 20px 0px 20px;
   display: flex;
   align-items: center;
   border-radius: 12px;
   background-color: #333;
   position: sticky;
   top: 0;
-  border-color: #fff;
-  border-width: 2px;
-  border-style: solid;
   z-index: 999;
+}
+.menu{
+  display: none;
 }
 
 .branding-nav {
@@ -46,7 +51,7 @@ body {
   border: 1px solid #ddd;
   outline: none;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .search input:hover{
@@ -119,34 +124,41 @@ body {
 
 /* welcome_css_starts_here */
 
-.welcome {
-  background-image: url(./assets/index-images/luffy.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 95vh;
-  border-radius: 20px;
-  margin: 1px 3px 3px 3px;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
-  font-size: 100px;
-  font-weight: bolder;
-  font-style: oblique;
+.landing{
+  height: 100dvh;
 }
 
-.welcome-1 {
-  color: #fff;
+.welcome{
+  margin: 0px 2px 0px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3vw 0 3vw;
+  /* background-color: lightseagreen; */
+  border-radius: 20px;
+  color: #333;
+  font-size: 6vw;
+  font-weight: bolder;
+  font-style: oblique;
+  height: calc(93% - 4px);
 }
-.welcome-2 {
-  color: #ea4c89;
-  /* color: #333; */
+.welcome1{
+  width: 50%;
 }
-.welcome-3 {
-  color: #fff;
+.webcome2{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-.welcome-4 {
-  color: #ea4c89;
-  /* color: #333; */
+.welcome-img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome2 img{
+  max-width: 100%;
 }
 
 /* welcome_css_end_here */
@@ -155,13 +167,14 @@ body {
 
 .anima-chat {
   border-radius: 12px;
-  margin: 100px;
+  margin: 8rem;
   text-align: center;
 }
 
 .anima-chat-header {
   text-align: center;
-  font-size: 40px;
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
 .anima-chat-container {
@@ -193,9 +206,8 @@ body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
   font-style: oblique;
-  font-weight: bold;
 }
 
 /* anima_chat_css_ends_here */
@@ -203,20 +215,25 @@ body {
 /* paralax_background_css_starts_here */
 
 .paralax-section {
-  background-image: url("assets/index-images/anime2.jpg");
-  background-size: 100%;
+  background-image: url("assets/index-images/anime4.jpeg");
   min-height: 250px;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  position: relative;
-  transition: all 0.7s linear;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .paralax-relative{
-  position: relative;
-  top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0.6;
+  margin-top: 1%;
 }
 
 .paralax-section-heading{
@@ -238,16 +255,16 @@ body {
 }
 
 
+
 /* paralax_background_css_ends_here */
 
 /* About_section_css_start_here */
 
 .about-section{
-  background-image: url("assets/index-images/scenery.jpeg");
+  background-image: url("assets/index-images/anime3.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 85vh;
-  margin: 3px;
+  margin: 2px;
   padding: 20px;
   border-radius: 20px;
   color: #fff;
@@ -292,30 +309,11 @@ body {
 
 .button-1 {
   background-color: #ea4c89;
-  border-radius: 10px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 20px;
   font-weight: bold;
-  height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  font-size: 20px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: #ffffff;
 }
 
 .button-1:hover,
@@ -323,7 +321,95 @@ body {
   background-color: #f082ac;
 }
 
-.home-button {
-  padding: 5px;
-  font-weight: bold;
+/* responsive_css_starts_here */
+
+
+@media (max-width:600px) {
+  .full-nav{
+    justify-content: space-between;
+    height: 6%;
+  }
+  .branding-nav{
+    width: 50%;
+  }
+  .navbar{
+    display: none;
+    width: none;
+  }
+  .search{
+    width: 50%;
+  }
+  .search input{
+    width: 50%;
+  }
+  .search form{
+    justify-content: right;
+    margin-right: 7%;
+  }
+  .menu{
+    display: block;
+    font-weight: bold;
+  }
+  .welcome{
+    flex-direction: column;
+    height: calc(94% - 4px);
+    padding: 0;
+    font-size: 7vw;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .welcome1{
+    height: 40%;
+    align-content: flex-end;
+  }
+  .welcome2{
+    height: 60%;
+  }
+  .welcome-img {
+    height: 100%;
+  }
+  .welcome-img img{
+    max-height: 100%;
+  }
+  .anima-chat{
+    margin: 30vh 0vh 30vh 0vh;
+  }
+  .anima-chat-header{
+    font-size: 1rem;
+  }
+  .anima-chat-text{
+    font-size: 1.25rem;
+  }
+  .anima-chat-text,.anima-chat-image{
+    width: 150px;
+    height: 150px;
+  }
+  .anima-chat-image img{
+    height: 150px;
+  }
+  .button-1{
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  .paralax-section{
+    background-image: url("assets/index-images/anime5.jpg");
+    min-height: 200px;
+  }
+  .paralax-section-heading{
+    font-size: 20px;
+  }
+  .paralax-relative{
+    opacity: 1;
+  }
+  .paralax-text{
+    font-size: 20px;
+  }
+  .about-section{
+    background-image: url("assets/index-images/blackbeard.jpg");
+  }
+  .about-text{
+    background-color: #333;
+    color: #fff;
+  }
 }
