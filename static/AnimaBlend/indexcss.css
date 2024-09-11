@@ -1,3 +1,7 @@
+.html{
+  font-size: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -12,15 +16,18 @@ body {
 
 .full-nav {
   border: 2px solid #fff;
-  height: 7%;
-  padding: 0px 20px 0px 20px;
+  height: 7dvh;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   border-radius: 12px;
   background-color: #333;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 99;
+}
+.branding-nav-mobile{
+  display: none;
 }
 .menu{
   display: none;
@@ -120,27 +127,28 @@ body {
   color: #ea4c89;
 }
 
+.active{
+  border-radius: 5px;
+  border: 2px solid #ea4c89;
+}
 /* nav_bar_css_ends_here */
 
 /* welcome_css_starts_here */
 
-.landing{
-  height: 100dvh;
-}
 
 .welcome{
-  margin: 0px 2px 0px 2px;
+  margin: 0px 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 3vw 0 3vw;
-  /* background-color: lightseagreen; */
+  padding: 0 3vw;
+  background-color: lightseagreen;
   border-radius: 20px;
   color: #333;
   font-size: 6vw;
   font-weight: bolder;
   font-style: oblique;
-  height: calc(93% - 4px);
+  height: calc(93dvh - 4px);
 }
 .welcome1{
   width: 50%;
@@ -262,18 +270,19 @@ body {
 
 .about-section{
   background-image: url("assets/index-images/anime3.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   margin: 2px;
   padding: 20px;
   border-radius: 20px;
   color: #fff;
   text-align: center;
+  font-size: 16px;
 }
 
 .about-heading{
   font-style: italic;
-  font-size: 30px;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -284,7 +293,7 @@ body {
   background-color: #ea4c89;
   color: #fff;
   margin: 20px;
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: bold;
   word-spacing: 5px;
   line-height: 1.5;
@@ -327,14 +336,42 @@ body {
 @media (max-width:600px) {
   .full-nav{
     justify-content: space-between;
-    height: 6%;
   }
   .branding-nav{
     width: 50%;
   }
   .navbar{
-    display: none;
-    width: none;
+    position: absolute;
+    top: 0px;
+    left: -300px;
+    z-index: 999;
+    width: 280px;
+    height: 100vh;
+    background-color: #333;
+    transition: 0.2s;
+    box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    border-radius: 12px;
+  }
+  .branding-nav-mobile{
+    display: block;
+    width: 100%;
+    height: 12%;
+    font-size: 1.5rem;
+    margin: 20px 0 0 40px;
+  }
+  .nav-links{
+    flex-direction: column;
+    width: 100%;
+    height: 88%;
+    justify-content: left;
+  }
+  .nav-links li{
+    font-size: 16px;
+    margin: 5px;
+  }
+  #nav-check:checked ~ .navbar {
+    left: 0;
   }
   .search{
     width: 50%;
@@ -352,7 +389,6 @@ body {
   }
   .welcome{
     flex-direction: column;
-    height: calc(94% - 4px);
     padding: 0;
     font-size: 7vw;
     align-items: center;
@@ -405,11 +441,7 @@ body {
   .paralax-text{
     font-size: 20px;
   }
-  .about-section{
-    background-image: url("assets/index-images/blackbeard.jpg");
-  }
   .about-text{
-    background-color: #333;
-    color: #fff;
+    font-size: 1em;
   }
 }
