@@ -126,10 +126,14 @@ body {
 .nav-links a:hover {
   color: #ea4c89;
 }
-
-.active{
-  border-radius: 5px;
+.active-dic{
   border: 2px solid #ea4c89;
+  border-radius: 50%;
+}
+.active{
+  border: 2px solid #ea4c89;
+  border-radius: 8px;
+  padding: 2px 4px;
 }
 /* nav_bar_css_ends_here */
 
@@ -142,7 +146,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 3vw;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
   border-radius: 20px;
   color: #333;
   font-size: 6vw;
