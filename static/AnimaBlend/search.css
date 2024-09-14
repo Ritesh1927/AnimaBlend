@@ -5,72 +5,145 @@ body {
 }
 
 .search-header {
+  margin: 20px;
   font-size: 30px;
   font-weight: 600;
-  margin: 20px;
+  color: #333;
 }
 
 .search-result {
-  background-image: url(./assets/search-images/search-anime1.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  height: 100vh;
-  border-radius: 20px;
   margin: 1px 3px 3px 3px;
-  padding: 20px;
+  border-radius: 20px;
   color: #fff;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-content: center;
 }
 
+.card-row {
+  display: flex;
+  margin: 5px;
+  /* background-color: lightseagreen; */
+}
 .card {
-    width: 250px;
-    height: 350px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    text-align: center;
-    margin: 10px;
-    padding: 3px;
-  }
-  .card img {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  .card-episodes {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  .card-image{
-    position: relative;
-    top: 0px;
-    height: 80%;
-    width: 100%;
-  }
-  .card-image img{
-    border-radius: 12px;
-  }
-
-.search-no{
+  width: 19vw;
+  height: 27vw;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  background-color: #ea4c;
+  text-align: center;
+  margin: 10px;
+  padding: 3px;
+}
+.card:hover {
+  background-color: #ea4c89;
+}
+.card img {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+  display: block;
+}
+.card-title {
+  font-size: 1.43vw;
+  /* font-size: 18px; */
+  font-weight: bold;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.card-episodes {
+  font-size: 1.1vw;
+  /* font-size: 14px; */
+  color: #666;
+  margin-bottom: 15px;
+}
+.card-image {
+  position: relative;
+  top: 0px;
+  height: 80%;
+  width: 100%;
+}
+.card-image img {
+  border-radius: 12px;
+}
+
+.search-no {
   color: #333;
   opacity: 0.5;
   font-size: 30px;
   font-weight: bold;
+}
+
+.search-result-800 {
+  display: none;
+}
+.search-result-500 {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .search-result {
+    display: none;
+  }
+  .search-result-800 {
+    display: block;
+    margin: 1px 3px 3px 3px;
+    border-radius: 20px;
+    color: #fff;
+    display: grid;
+    place-content: center;
+  }
+
+  .card {
+    width: 27vw;
+    height: 37vw;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 3px;
+  }
+  .card-title{
+    font-size: 1.9vw;
+  }
+  .card-episodes{
+    font-size: 1.4vw;
+  }
+  .card-image img{
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .search-result {
+    display: none;
+  }
+  .search-result-800 {
+    display: none;
+  }
+  .search-result-500 {
+    display: block;
+    margin: 1px 3px 3px 3px;
+    border-radius: 20px;
+    color: #fff;
+    display: grid;
+    place-content: center;
+  }
+  .card {
+    width: 39vw;
+    height: 56vw;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px;
+    padding: 3px;
+  }
+  .card-title{
+    font-size: 2.7vw;
+    margin: 7px 0;
+  }
+  .card-episodes{
+    font-size: 1.9vw;
+  }
+  .card-image img{
+    border-radius: 8px;
+  }
 }

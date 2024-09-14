@@ -334,10 +334,9 @@ body {
   background-color: #f082ac;
 }
 
-/* responsive_css_starts_here */
+/* responsive_css_starts_here 800px */
 
-
-@media (max-width:600px) {
+@media (max-width:800px) {
   .full-nav{
     justify-content: space-between;
   }
@@ -391,6 +390,11 @@ body {
     display: block;
     font-weight: bold;
   }
+}
+
+/* responsive_css_for 600px */
+
+@media (max-width:600px) {
   .welcome{
     flex-direction: column;
     padding: 0;
@@ -447,5 +451,8 @@ body {
   }
   .about-text{
     font-size: 1em;
+  }
+  .footer{
+    font-size: 12px;
   }
 }

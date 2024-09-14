@@ -13,46 +13,50 @@
   <body>
     {% comment %} nav_bar_starts_here {% endcomment %}
     <div class="full-nav">
-      <nav class="branding-nav">
-        <a href="/">
+      <div class="branding-nav">
           <span class="dic">Dic</span><span class="tators">tators</span>
-        </a>
-      </nav>
+      </div>
+      <input type="checkbox" id="nav-check" hidden>
       <nav class="navbar">
+        <div class="branding-nav-mobile">
+            <span class="dic">Dic</span><span class="tators">tators</span>
+        </div>
         <ul class="nav-links">
-          <li><a href="#about">AnimaChat</a></li>
+          <li><a href="/">AnimaChat</a></li>
           <li><a href="home">AnimaBlend</a></li>
-          <li>
-            <a href="/"
-              ><img src="{% static "AnimaBlend/assets/index-images/debian.ico" %}" class="debian"></a
-            >
-          </li>
-          <li><a href="#portfolio">Community</a></li>
-          <li><a href="/#about">About</a></li>
+          <li><a href="/"><img src="{% static "AnimaBlend/assets/index-images/zoro-logo.png" %}" class="debian"></a></li>
+          <li><a href="/">Community</a></li>
+          <li><a href="/">About</a></li>
         </ul>
       </nav>
       <div class="search">
         <form name="search-form" method="get" action="search">
-          <input type="text" placeholder="Search..." name="search" />
+          <input type="text" placeholder="Search..." name="search">
           <button type="submit">Go</button>
         </form>
+        <label for="nav-check">
+          <div class="menu">
+            <img src="{% static "AnimaBlend/assets/index-images/menu.png" %}">
+          </div>
+        </label>
       </div>
     </div>
 
     {% comment %} nav_bar_html_ends_here {% endcomment %}
 
     <div class="search-header">Search Results :</div>
-
+    
     {% comment %} search_html_starts_here {% endcomment %}
-
+    
+    
     <div class="search-result">
 
       {% if animes %}
-  <div class="card_row">
+  <div class="card-row">
     {% for anime in animes %}
-      {% if forloop.counter|divisibleby:4 and not forloop.first %}
+      {% if forloop.counter0|divisibleby:4 and not forloop.first %}
         </div>
-        <div class="card_row">
+        <div class="card-row">
       {% endif %}
       
       <div class="card">
@@ -62,10 +66,62 @@
         <div class="card-title">{{ anime.title }}</div>
         <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
       </div>
+      
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="search-no">No search Results found</div>
+{% endif %}
 
-      {% if forloop.counter|divisibleby:4 and forloop.last %}
+    </div>
+
+    {% comment %} search_result_for_800_starts_here {% endcomment %}
+
+    <div class="search-result-800">
+
+      {% if animes %}
+  <div class="card-row">
+    {% for anime in animes %}
+      {% if forloop.counter0|divisibleby:3 and not forloop.first %}
         </div>
+        <div class="card-row">
       {% endif %}
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ anime.thumbnail }}" alt="Show Image">
+        </div>
+        <div class="card-title">{{ anime.title }}</div>
+        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
+      </div>
+      
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="search-no">No search Results found</div>
+{% endif %}
+
+    </div>
+
+    {% comment %} search_result_for_500_starts_here {% endcomment %}
+
+    <div class="search-result-500">
+
+      {% if animes %}
+  <div class="card-row">
+    {% for anime in animes %}
+      {% if forloop.counter0|divisibleby:2 and not forloop.first %}
+        </div>
+        <div class="card-row">
+      {% endif %}
+      
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ anime.thumbnail }}" alt="Show Image">
+        </div>
+        <div class="card-title">{{ anime.title }}</div>
+        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
+      </div>
       
     {% endfor %}
   </div>
