@@ -58,14 +58,16 @@
         </div>
         <div class="card-row">
       {% endif %}
-      
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ anime.thumbnail }}" alt="Show Image">
+
+      <a href="{% url 'details' anime.id %}">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ anime.thumbnail }}" alt="Show Image">
+          </div>
+          <div class="card-title">{{ anime.title }}</div>
+          <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
-        <div class="card-title">{{ anime.title }}</div>
-        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
-      </div>
+      </a>
       
     {% endfor %}
   </div>
@@ -87,13 +89,15 @@
         <div class="card-row">
       {% endif %}
       
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ anime.thumbnail }}" alt="Show Image">
+      <a href="{% url 'details' anime.id %}">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ anime.thumbnail }}" alt="Show Image">
+          </div>
+          <div class="card-title">{{ anime.title }}</div>
+          <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
-        <div class="card-title">{{ anime.title }}</div>
-        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
-      </div>
+      </a>
       
     {% endfor %}
   </div>
@@ -115,13 +119,15 @@
         <div class="card-row">
       {% endif %}
       
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ anime.thumbnail }}" alt="Show Image">
+      <a href="{% url 'details' anime.id %}">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ anime.thumbnail }}" alt="Show Image">
+          </div>
+          <div class="card-title">{{ anime.title }}</div>
+          <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
-        <div class="card-title">{{ anime.title }}</div>
-        <div class="card-episodes">Episodes: {{ anime.num_episodes }}</div>
-      </div>
+      </a>
       
     {% endfor %}
   </div>

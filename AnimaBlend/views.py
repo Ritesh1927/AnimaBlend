@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Episode , Anime
 from django.db.models import Count
 
@@ -13,12 +13,12 @@ def index(request):
 def play(request):
     return render(request,'AnimaBlend/play.html')
 
-def details(request):
-    return render(request,'AnimaBlend/details.html')
+def details(request, anime_id):
+    anime = get_object_or_404(Anime, pk=anime_id)
+    return render(request,'AnimaBlend/details.html', {'anime': anime})
 
 def search(request):
     search = request.GET.get('search', '')
-    animes = Anime.objects.filter(title__icontains=search).annotate(num_episodes=Count('episode'))
-    num_animes = animes.count()
-    params = {'animes': animes, 'animes_count': num_animes}
+    animes = Anime.objects.filter(title__icontains=search)
+    params = {'animes': animes}
     return render(request, 'AnimaBlend/search.html', params)

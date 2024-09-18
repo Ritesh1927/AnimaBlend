@@ -24,6 +24,10 @@ body {
   margin: 5px;
   /* background-color: lightseagreen; */
 }
+.card-row a{
+  text-decoration: none;
+  margin: 10px;
+}
 .card {
   width: 19vw;
   height: 27vw;
@@ -33,7 +37,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #ea4c;
   text-align: center;
-  margin: 10px;
   padding: 3px;
 }
 .card:hover {
@@ -46,6 +49,7 @@ body {
 }
 .card-title {
   font-size: 1.43vw;
+  color: #333;
   /* font-size: 18px; */
   font-weight: bold;
   margin: 10px 0;
@@ -99,8 +103,6 @@ body {
     height: 37vw;
     border-radius: 10px;
     text-align: center;
-    margin: 10px;
-    padding: 3px;
   }
   .card-title{
     font-size: 1.9vw;
@@ -134,8 +136,6 @@ body {
     height: 63vw;
     border-radius: 8px;
     text-align: center;
-    margin: 10px;
-    padding: 3px;
   }
   .card-title{
     font-size: 2.7vw;
