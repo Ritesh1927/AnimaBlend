@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.play-container {
+  background-color: gray;
+  border-radius: 12px;
+}
+.play-stream {
+  height: calc(93dvh - 4px);
+  margin: 1px 3px 3px 3px;
+  border-radius: 12px;
+}

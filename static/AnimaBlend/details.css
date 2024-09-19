@@ -82,7 +82,7 @@ body {
     place-content: center;
 }
 
-/* css_for_800_width_starts_here */
+/* css_for_responsiveness_width_starts_here */
 
 @media (max-width:1200px){
     .details-main-1{
@@ -90,7 +90,10 @@ body {
         border-radius: 12px;
     }
     .anime-details-poster,.anime-details-text{
-        height: 60vw;
+        height: 40vw;
+    }
+    .anime-details-poster{
+        width: 32%;
     }
 }
 
@@ -112,11 +115,25 @@ body {
     .details-main-1{
         background-color: rgba(51, 51, 51, .8);
     }
-    .anime-details-poster,.anime-details-text{
-        width: 55vw;
+    .anime-details-poster{
+        width: 52vw;
     }
     .anime-details-text{
         width: 80%;
         font-size: 12px;
+    }
+}
+
+@media (max-height:400px){
+    .details-main-1{
+        flex-direction: row;
+    }
+    .anime-details-poster{
+        width: 29%;
+        height: 88%;
+    }
+    .anime-details-text{
+        width: 53%;
+        height: 88%;
     }
 }

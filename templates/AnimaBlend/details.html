@@ -62,7 +62,7 @@
           <div class="details-description">{{ anime.description }}</div>
           <div class="details-watch-button">
             <div class="home-button">
-              <a href="/play"><button class="button-1" role="button">Watch now</button></a>
+              <a href="{% url 'play_one' anime.id %}"><button class="button-1" role="button">Watch now</button></a>
             </div>
           </div>
         </div>
