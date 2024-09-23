@@ -1,36 +1,41 @@
-/* body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
-
+/* Container for the video */
 .video-container {
+  margin: auto;
   position: relative;
   max-width: 800px;
   width: 100%;
   background-color: #000;
 }
 
+/* Video element styling */
 video {
   width: 100%;
   display: block;
 }
 
+/* Wrapper for controls and progress bar in normal screen */
+.controls-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Default stacking for progress bar above controls */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+  opacity: 1;
+  visibility: visible;
+  z-index: 5; /* Ensure visibility above other elements */
+}
+
 /* Progress bar container */
 .progress-container {
-  position: absolute;
-  bottom: 0; /* Fixed to stay above the controls */
   width: 100%;
   height: 8px;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 6; /* Above controls */
   cursor: pointer;
-  z-index: 10; /* Ensure it's above the controls */
 }
 
+/* Progress bar itself */
 .progress {
   width: 0%;
   height: 100%;
@@ -44,18 +49,10 @@ video {
   align-items: center;
   padding: 10px;
   background-color: rgba(51, 51, 51, 0.7);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  visibility: hidden;
-  z-index: 5; /* Below the progress bar */
-}
-
-.video-container:hover .controls {
   opacity: 1;
   visibility: visible;
+  width: 100%;
+  z-index: 5; /* Below progress bar */
 }
 
 .btn {
@@ -71,37 +68,51 @@ video {
   color: #ccc;
 }
 
+/* Volume control styling */
 #volume {
   width: 100px;
 }
 
-/* Fullscreen adjustments */
-.fullscreen .controls {
+/* Fullscreen mode specific styles */
+.fullscreen .controls-wrapper {
   position: fixed;
   bottom: 0;
   width: 100%;
-  opacity: 1;
-  visibility: visible;
+  flex-direction: column; /* Keep stacking as normal in fullscreen */
+  z-index: 5;
+}
+
+.fullscreen .controls {
+  width: 100%;
+  z-index: 5; /* Below progress bar */
 }
 
 .fullscreen .progress-container {
-  position: fixed;
-  bottom: 50px;
   width: 100%;
   height: 8px;
+  z-index: 6; /* Above controls */
 }
 
-/* Hide controls when not moving the mouse in full-screen mode */
-.fullscreen.hide-controls .controls {
+/* Hide controls and progress bar when not active */
+.fullscreen.hide-controls .controls-wrapper {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Ensure progress bar and controls don't overlap */
-.fullscreen .controls {
-  bottom: 0;
+/* Show controls-wrapper when controls are visible */
+.fullscreen.controls-visible .controls-wrapper {
+  opacity: 1;
+  visibility: visible;
 }
 
-.fullscreen .progress-container {
-  bottom: 0; /* Adjust to avoid overlap */
+/* Additional fullscreen adjustments */
+.fullscreen .video-container {
+  display: flex;
+  flex-direction: column; /* Ensure stacking of elements */
+}
+
+.fullscreen .progress-container .progress {
+  width: 0%;
+  height: 100%;
+  transition: width 0.3s ease; /* Smooth progress bar update */
 }
