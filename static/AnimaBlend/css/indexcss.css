@@ -227,7 +227,7 @@ body {
 /* paralax_background_css_starts_here */
 
 .paralax-section {
-  background-image: url("assets/index-images/anime4.jpeg");
+  background-image: url("../assets/index-images/anime4.jpeg");
   min-height: 250px;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -273,7 +273,7 @@ body {
 /* About_section_css_start_here */
 
 .about-section{
-  background-image: url("assets/index-images/anime3.jpg");
+  background-image: url("../assets/index-images/anime3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 2px;
@@ -437,7 +437,7 @@ body {
     padding: 5px 10px;
   }
   .paralax-section{
-    background-image: url("assets/index-images/anime5.jpg");
+    background-image: url("../assets/index-images/anime5.jpg");
     min-height: 200px;
   }
   .paralax-section-heading{

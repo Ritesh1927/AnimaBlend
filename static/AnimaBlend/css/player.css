@@ -1,0 +1,107 @@
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.video-container {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: #000;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+/* Progress bar container */
+.progress-container {
+  position: absolute;
+  bottom: 0; /* Fixed to stay above the controls */
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  z-index: 10; /* Ensure it's above the controls */
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #ea4c89;
+}
+
+/* Controls container */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(51, 51, 51, 0.7);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  z-index: 5; /* Below the progress bar */
+}
+
+.video-container:hover .controls {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #ccc;
+}
+
+#volume {
+  width: 100px;
+}
+
+/* Fullscreen adjustments */
+.fullscreen .controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fullscreen .progress-container {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  height: 8px;
+}
+
+/* Hide controls when not moving the mouse in full-screen mode */
+.fullscreen.hide-controls .controls {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ensure progress bar and controls don't overlap */
+.fullscreen .controls {
+  bottom: 0;
+}
+
+.fullscreen .progress-container {
+  bottom: 0; /* Adjust to avoid overlap */
+}

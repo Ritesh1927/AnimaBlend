@@ -6,7 +6,7 @@ body {
 
 
 .details-main{
-    background-image: url(assets/details-images/search.jpg);
+    background-image: url(../assets/details-images/search.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
