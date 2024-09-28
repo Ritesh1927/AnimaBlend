@@ -3,17 +3,181 @@ body {
   font-family: Arial, sans-serif;
   background-color: #fff;
 }
+
 .play-container{
   margin: 1px 3px 3px 3px;
+  color: #FEFEFE;
   border-radius: 12px;
+  background-color: rgba(51, 51, 51, .9);
+  /* background-color: #151315; */
+  height: calc(93dvh - 4px);
+  overflow: scroll;
 }
 .play-main{
   width: 70%;
   background-color: #333;
   margin: auto;
+  padding-top: 16px;
+  border: 4px solid rgba(51, 51, 51, .5);
 }
 .play-video{
   width: 100%;
-  height: calc(93dvh - 4px);
 }
 
+.post-video-details{
+  display: flex;
+  justify-content: space-between;
+}
+.play-meta{
+  margin: 25px;
+}
+.play-meta-anime{
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #ea4c89;
+}
+.play-meta-ep{
+  font-size: 17px;
+  font-weight: 500;
+  color: #EDEADE;
+  /* font-style: italic; */
+}
+.auto-play{
+  margin: 25px;
+  font-size: 18px;
+  color: lightseagreen;
+}
+
+/* Style for the switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px; /* Smaller width */
+  height: 18px; /* Smaller height */
+}
+
+/* Hide default checkbox */
+.switch input {
+  display: none;
+}
+
+/* Slider part of the switch */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 18px;
+}
+
+/* Circle inside the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; /* Smaller circle height */
+  width: 14px; /* Smaller circle width */
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+/* When the switch is checked */
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+/* Move the circle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(16px); /* Adjusted for smaller width */
+}
+
+/* all_episode_css_section */
+
+.play-division{
+  background-color: #474747;
+  text-align: center;
+  padding: 10px 0px;
+}
+.all-episodes{
+  width: 100%;
+  padding: 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.all-episodes a{
+  text-decoration: none;
+  color: #ccc;
+}
+.ep-box{
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  margin: 3px;
+}
+.ep-box-active{
+  border: 2px solid #ea4c89;
+}
+.play-footer{
+  height: 50%;
+  background-color: #333;
+  border: 0px;
+  margin-top: 100px;
+  font-size: 30px;
+  padding: 10px 20px;
+}
+.footer-head{
+  font-weight: 800;
+}
+.az-head{
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.az-divide{
+  margin: 0px 7px;
+}
+.az-tail{
+  font-size: 0.55em;
+}
+.alphabets{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+}
+.alphabet-box{
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+  margin: 3px;
+  font-size: 0.55em;
+}
+.alphabet-box a{
+  color: #fff;
+  text-decoration: none;
+}
+.footer-description{
+  font-size: 0.48em;
+  color: #B0B0B0;
+}
+.play-footer-main{
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #D3D3D3;
+}
+.pink{
+  color: #ea4c89;
+}
+.white{
+  color: white;
+}
+.black{
+  color: #333;
+}

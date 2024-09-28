@@ -64,7 +64,11 @@
           <div class="card-image">
             <img src="{{ anime.thumbnail }}" alt="Show Image">
           </div>
-          <div class="card-title">{{ anime.title }}</div>
+          {% if anime.title|length > 15 %}
+            <div class="card-title">{{ anime.title|slice:":15" }}...</div>
+          {% else %}
+            <div class="card-title">{{ anime.title }}</div>
+          {% endif %}
           <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
       </a>
@@ -94,7 +98,11 @@
           <div class="card-image">
             <img src="{{ anime.thumbnail }}" alt="Show Image">
           </div>
-          <div class="card-title">{{ anime.title }}</div>
+          {% if anime.title|length > 15 %}
+            <div class="card-title">{{ anime.title|slice:":15" }}...</div>
+          {% else %}
+            <div class="card-title">{{ anime.title }}</div>
+          {% endif %}
           <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
       </a>
@@ -124,7 +132,11 @@
           <div class="card-image">
             <img src="{{ anime.thumbnail }}" alt="Show Image">
           </div>
-          <div class="card-title">{{ anime.title }}</div>
+          {% if anime.title|length > 15 %}
+            <div class="card-title">{{ anime.title|slice:":15" }}...</div>
+          {% else %}
+            <div class="card-title">{{ anime.title }}</div>
+          {% endif %}
           <div class="card-episodes">Episodes: {{ anime.episode.count }}</div>
         </div>
       </a>
