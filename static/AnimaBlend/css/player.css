@@ -26,6 +26,13 @@ video {
   z-index: 5; /* Ensure visibility above other elements */
 }
 
+/* Additional styling for the time display */
+.time-display {
+  color: #fff;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
 /* Progress bar container */
 .progress-container {
   width: 100%;
@@ -47,7 +54,6 @@ video {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* padding: 10px; */
   background-color: rgba(51, 51, 51, 0.7);
   opacity: 1;
   visibility: visible;
@@ -93,20 +99,24 @@ video {
   z-index: 6; /* Above controls */
 }
 
-/* Hide controls and progress bar when not active */
-.fullscreen.hide-controls .controls-wrapper {
+/* Hide controls and progress bar when not active (for both fullscreen and normal modes) */
+.hide-controls .controls-wrapper {
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for hiding */
 }
 
-/* Show controls-wrapper when controls are visible */
-.fullscreen.controls-visible .controls-wrapper {
+/* Show controls-wrapper when controls are visible (for both fullscreen and normal modes) */
+.controls-visible .controls-wrapper {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for showing */
 }
 
 /* Additional fullscreen adjustments */
 .fullscreen .video-container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column; /* Ensure stacking of elements */
 }
@@ -115,4 +125,59 @@ video {
   width: 0%;
   height: 100%;
   transition: width 0.3s ease; /* Smooth progress bar update */
+}
+
+/* responsive_css_starts_here */
+@media only screen and (max-width: 600px) {
+  /* Reduce button sizes and padding */
+  .controls {
+    justify-content: space-around;
+    padding: 5px 0;
+  }
+
+  .btn {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  /* Reduce the size of the volume control */
+  #volume {
+    width: 70px;
+  }
+
+  /* Adjust the time display font size */
+  .time-display {
+    font-size: 12px;
+    margin: 0 5px;
+  }
+
+  /* Adjust the progress bar height to be more suitable for mobile */
+  .progress-container {
+    height: 5px;
+  }
+
+  /* Fullscreen mode: Ensure controls take up less vertical space */
+  .fullscreen .controls-wrapper {
+    padding: 5px;
+  }
+
+  .fullscreen .progress-container {
+    height: 5px;
+  }
+
+  .fullscreen .btn {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  /* Ensure touch-friendly buttons and controls */
+  .btn {
+    touch-action: manipulation;
+  }
+
+  /* Hide controls after a short delay to save screen space */
+  .hide-controls .controls-wrapper {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

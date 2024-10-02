@@ -9,6 +9,7 @@ const fullScreenBtn = document.getElementById('fullScreen');
 const progressBar = document.getElementById('progress');
 const progressContainer = document.getElementById('progressContainer');
 const controls = document.getElementById('controls');
+const timeDisplay = document.getElementById('timeDisplay');
 
 // Play or pause the video
 function togglePlayPause() {
@@ -87,9 +88,9 @@ let hideControlsTimeout;
 function showControlsOnMouseMove() {
     videoContainer.classList.remove('hide-controls');
     videoContainer.classList.add('controls-visible');
-    
-    // Only hide controls if the video is playing and in full-screen mode
-    if (!video.paused && document.fullscreenElement) {
+
+    // Only hide controls if the video is playing (works for both fullscreen and normal mode)
+    if (!video.paused) {
         if (hideControlsTimeout) {
             clearTimeout(hideControlsTimeout);
         }
@@ -97,7 +98,7 @@ function showControlsOnMouseMove() {
         hideControlsTimeout = setTimeout(() => {
             videoContainer.classList.add('hide-controls');
             videoContainer.classList.remove('controls-visible');
-        }, 2000); // Hide controls after 2 seconds of inactivity in fullscreen and playing
+        }, 2000); // Hide controls after 2 seconds of inactivity
     }
 }
 
@@ -122,13 +123,44 @@ video.addEventListener('pause', () => {
 // Progress bar scrubbing
 progressContainer.addEventListener('click', scrub);
 
-// Show controls on mouse move in fullscreen
+// Show controls on mouse move in both fullscreen and normal modes
 videoContainer.addEventListener('mousemove', showControlsOnMouseMove);
 
-// Ensure controls are always visible in normal mode
-videoContainer.addEventListener('mousemove', () => {
-    if (!document.fullscreenElement) {
-        videoContainer.classList.remove('hide-controls');
-        videoContainer.classList.remove('controls-visible');
-    }
+// Keep track of time and show current time/total time
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Update time display
+function updateTimeDisplay() {
+    const currentTime = video.currentTime;
+    const duration = video.duration;
+    timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+}
+
+// Ensure time updates as the video plays
+video.addEventListener('timeupdate', updateTimeDisplay);
+
+// Set the duration once the video metadata is loaded
+video.addEventListener('loadedmetadata', () => {
+    updateTimeDisplay(); // Initialize the time display with correct duration
 });
+
+// Hide controls after 2 seconds of inactivity in both normal and fullscreen modes
+function handleMouseInactivity() {
+    if (!video.paused) {
+        if (hideControlsTimeout) {
+            clearTimeout(hideControlsTimeout); // Clear existing timeout if any
+        }
+
+        hideControlsTimeout = setTimeout(() => {
+            videoContainer.classList.add('hide-controls');
+            videoContainer.classList.remove('controls-visible');
+        }, 2000); // Hide after 2 seconds of inactivity
+    }
+}
+
+// Listen for mouse movement in both normal and fullscreen mode
+videoContainer.addEventListener('mousemove', handleMouseInactivity);

@@ -59,18 +59,32 @@
 
           
             <div class="video-container" id="videoContainer">
-              <video id="video" class="video" src="{{ current_episode.video_dub }}"></video>
-              
-            <!-- New wrapper for controls and progress bar -->
-            <div class="controls-wrapper">
-              <div class="progress-container" id="progressContainer">
-                <div class="progress" id="progress"></div>
+              <video
+                id="video"
+                class="video"
+                src="{{ current_episode.video_dub }}"
+              ></video>
+  
+              <!-- New wrapper for controls and progress bar -->
+              <div class="controls-wrapper">
+                <div class="progress-container" id="progressContainer">
+                  <div class="progress" id="progress"></div>
                 </div>
+  
                 <div class="controls" id="controls">
                   <button class="btn" id="playPause">▶</button>
+                  <!-- Added current time / duration display -->
+                  <span id="timeDisplay" class="time-display">00:00 / 00:00</span>
                   <button class="btn" id="skipBack">« 10s</button>
                   <button class="btn" id="skipForward">10s »</button>
-                  <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+                  <input
+                    type="range"
+                    id="volume"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="1"
+                  />
                   <button class="btn" id="fullScreen">⛶</button>
                 </div>
               </div>

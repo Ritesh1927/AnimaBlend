@@ -4,13 +4,20 @@ body {
   background-color: #fff;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 .play-container{
   margin: 1px 3px 3px 3px;
   color: #FEFEFE;
   border-radius: 12px;
   background-color: rgba(51, 51, 51, .9);
   /* background-color: #151315; */
-  height: calc(93dvh - 4px);
+  /* height: calc(93dvh - 4px); */
   overflow: scroll;
 }
 .play-main{
@@ -169,7 +176,7 @@ input:checked + .slider:before {
 .play-footer-main{
   font-size: medium;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #D3D3D3;
 }
 .pink{
@@ -180,4 +187,27 @@ input:checked + .slider:before {
 }
 .black{
   color: #333;
+}
+
+/* responsive_css_starts_here */
+
+@media (max-width:768px){
+  .play-container{
+    border-radius: 8px;
+  }
+  .play-main{
+    width: 100%;
+  }
+  .play-footer{
+    font-size: 20px;
+  }
+  .play-meta-anime{
+    font-size: 12px;
+  }
+  .play-meta-ep{
+    font-size: 15px;
+  }
+  .post-video-details{
+    flex-direction: column;
+  }
 }
