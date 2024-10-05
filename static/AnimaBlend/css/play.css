@@ -10,6 +10,20 @@ body {
   box-sizing: border-box;
 }
 
+a, button {
+  -webkit-tap-highlight-color: transparent;  /* Disable blue highlight */
+  -webkit-user-select: none;                 /* Disable text selection on Safari */
+  user-select: none;                         /* Disable text selection on other browsers */
+  touch-action: manipulation;                /* Prevent unintended zooming or panning */
+}
+
+a:focus, a:active, button:focus, button:active {
+  outline: none;
+  box-shadow: none;
+  background-color: inherit;                 /* Ensure background doesn't change */
+}
+
+
 
 .play-container{
   margin: 1px 3px 3px 3px;
@@ -194,6 +208,7 @@ input:checked + .slider:before {
 @media (max-width:768px){
   .play-container{
     border-radius: 8px;
+    margin: 0px 2px 2px 2px;
   }
   .play-main{
     width: 100%;

@@ -4,6 +4,20 @@ body {
   background-color: #fff;
 }
 
+a, button {
+  -webkit-tap-highlight-color: transparent;  
+  -webkit-user-select: none;                 
+  user-select: none;                         
+  touch-action: manipulation;               
+}
+
+a:focus, a:active, button:focus, button:active {
+  outline: none;
+  box-shadow: none;
+  background-color: inherit;   
+}
+
+
 .search-header {
   margin: 20px;
   font-size: 30px;

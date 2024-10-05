@@ -38,10 +38,15 @@ function handleVolumeChange() {
 }
 
 // Update progress bar as the video plays
+// function updateProgress() {
+//     const percent = (video.currentTime / video.duration) * 100;
+//     progressBar.style.width = `${percent}%`;
+// }
 function updateProgress() {
     const percent = (video.currentTime / video.duration) * 100;
-    progressBar.style.width = `${percent}%`;
+    progressBar.style.width = `${percent}%`; // Updated with correct string template syntax
 }
+
 
 // Seek in the video when clicking on progress bar
 function scrub(e) {
@@ -69,16 +74,29 @@ progressContainer.addEventListener('mouseleave', () => {
     isDragging = false;
 });
 
-// Fullscreen mode
+// Fullscreen mode with landscape orientation on mobile
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
         videoContainer.requestFullscreen();
         videoContainer.classList.add('fullscreen');
+
+        // Force landscape mode on mobile devices
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(err => {
+                console.error('Error locking orientation:', err);
+            });
+        }
+
         showControlsOnMouseMove();  // Ensure controls show on mouse move in fullscreen
     } else {
         document.exitFullscreen();
         videoContainer.classList.remove('fullscreen');
         videoContainer.classList.remove('hide-controls');
+
+        // Unlock the orientation (return to normal)
+        if (screen.orientation && screen.orientation.unlock) {
+            screen.orientation.unlock();
+        }
     }
 }
 
@@ -164,3 +182,7 @@ function handleMouseInactivity() {
 
 // Listen for mouse movement in both normal and fullscreen mode
 videoContainer.addEventListener('mousemove', handleMouseInactivity);
+
+
+
+

@@ -1,374 +1,84 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=\, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/base/base.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/navbar.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/main.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/myslick.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime.css' %}" />
-  <link rel="stylesheet" href="{% static 'AnimaBlend/projectcss/anime-btn.css' %}" />
-
-
-  <!-- icons cdn  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- google fonts cdn  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
-    rel="stylesheet" />
-  <!-- slick slider css  -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static "AnimaBlend/css/indexcss.css" %}">
+  <link rel="stylesheet" href="{% static "AnimaBlend/css/home.css" %}">
 </head>
-
 <body>
-  <!-- upper navbar  -->
-  <header class="inline-between align-center project-header">
-    <div class="main-logo-container align-center inline">
-      <div class="logo-container align-center">
-        <img class="logo-img mt8" src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
-      </div>
-      <p class="logo-name text-s">
-        <span class="text-s w800">Anima Blend</span>
-      </p>
-    </div>
+  
+  {% comment %} nav_bar_css_starts_here {% endcomment %}
 
-    <div class="main-nav-list-container">
-      <ul class="inline-evenly">
+  <div class="full-nav">
+    <div class="branding-nav">
+      <span class="dic">Dic</span><span class="tators">tators</span>
+    </div>
+    <input type="checkbox" id="nav-check" hidden />
+    <nav class="navbar">
+      <div class="branding-nav-mobile">
+        <span class="dic">Dic</span><span class="tators">tators</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">AnimaChat</a></li>
+        <li><a href="/home" class="active">AnimaBlend</a></li>
         <li>
-          <a class="nav-link" href="">
-            <i class="fa-solid fa-house font-awesome"></i>
-          </a>
+          <a href="/"
+            ><img src="{% static "AnimaBlend/assets/index-images/zoro-logo.png" %}"
+            class="debian"></a
+          >
         </li>
-        <li><a class="nav-link" href="">Movies</a></li>
-        <li><a class="nav-link" href="">Global Chat</a></li>
-        <li><a class="nav-link" href="">Series</a></li>
-        <li><a class="nav-link" href="">About</a></li>
+        <li><a href="/">Community</a></li>
+        <li><a href="/">About</a></li>
       </ul>
+    </nav>
+    <div class="search">
+      <form name="search-form" method="get" action="/search">
+        <input type="text" placeholder="Search..." name="search" />
+        <button type="submit">Go</button>
+      </form>
+      <label for="nav-check">
+        <div class="menu">
+          <img src="{% static "AnimaBlend/assets/index-images/menu.png" %}">
+        </div>
+      </label>
     </div>
-    <div class="login-search-wrapper">
-      <ul class="inline">
-        <li>
-          <a onclick="openSearchbar()" class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
-        </li>
-        <li>
-          <a class="nav-link" href=""><i class="fa-regular fa-bell fa-lg"></i></a>
-        </li>
-
-        <button class="btn-login" onclick="showModal()">Login</button>
-      </ul>
-    </div>
-  </header>
-  <div class="overlay"></div>
-  <!-- ḷogin form -->
-  <div class="loginform inline">
-    <span id="login-close-btn" onclick="closeModal()">Skip for now </span>
-    <div class="login-content">
-      <!-- website lgog container  -->
-      <div class="login-page-logo mb15 inline align-center">
-        <img src="{% static 'AnimaBlend/assets/mx player.png' %}" alt="" />
-        <p class="login-logo-name">
-          <span>Movies</span><span>Addicted</span>
-        </p>
-      </div>
-      <!-- ott info -->
-      <p class="login-ott-info">
-        Premium OTT service in India, where you can watch original series, TV
-        & Web shows, movies, and trending shows for free.
-      </p>
-      <p class="login-ott-info">Watch on desktop, mobile or tablet.</p>
-      <!--  signup section    -->
-      <div class="btn-container">
-        <button onclick="showSignupform()" class="signup-show-btn">
-          sign up
-        </button>
-        <button onclick="showSigninform()" class="signin-show-btn">
-          Sgin in
-        </button>
-      </div>
-    </div>
-    <form class="main-loginform-container" action="">
-      <div class="login-option">
-        <h1>Login</h1>
-        <p class="login-title">
-          Enjoy Movies Addicted exclusive features and benefits.
-        </p>
-        <div onclick="showBorder()" class="login-system-wrapper">
-          <i class="fa-solid font-awesome fa-envelope" style="color: #fafcff"></i>
-
-          <input placeholder="Enter your mail id " class="login-phone" id="login-mail" autocomplete="off" required
-            type="email" name="email" />
-        </div>
-        <!-- <input type="password" /> -->
-        <p class="otp-alert">You’ll get an SMS to verify your number.</p>
-
-        <button type="submit" class="next-login-btn" onclick="otpSection
-        ()">
-          Next
-        </button>
-        <p class="google-subtitle">Or use google for login .</p>
-        <div class="google-login-wrapper">
-          <button class="google-login-btn inline align-center">
-            <img src="{% static 'AnimaBlend/assets/google-icon.png' %}" alt="" />
-            <p>Continue with Google</p>
-          </button>
-
-          <p class="term-wrapper">
-            By Logging in you agree to the
-            <span class="t-or-c"><a href="">T&C</a></span> and
-            <span class="t-or-c"><a href="">T&C</a></span>
-            Privacy policy
-          </p>
-          <p class="term-wrapper-2">
-            On login, all your Watch History data will be synced to the
-            server.
-          </p>
-        </div>
-      </div>
-      <div class="passward-section">
-        <h1>Login</h1>
-        <p class="login-title">
-          Enjoy Movies Addicted exclusive features and benefits.
-        </p>
-        <div class="inline">
-          Mail is :-
-          <p class="mr10" id="showmail"></p>
-          <span onclick="backLogin()"><i class="fa-solid fa-pen-to-square"></i></span>
-        </div>
-        <!-- password cotainer -->
-        <div class="passward-div">
-          <input type="password" placeholder="Enter your password" />
-        </div>
-        <input class="next-login-btn" type="button" value="Login" />
-      </div>
-    </form>
-    <!-- sign up form section  -->
-    <form class="main-signup-form-container" action="">
-      <div class="login-option">
-        <h1>Signup</h1>
-        <p class="signup-title">
-          Signup Here And Enjoy Unintrupted Services .
-        </p>
-        <div class="signup-system-wrapper">
-          <i class="fa-solid font-awesome fa-user" style="color: #fafcff"></i>
-
-          <input placeholder="Enter your user name  " class="login-phone" type="text" name="name" />
-        </div>
-        <div class="signup-system-wrapper">
-          <i class="fa-solid font-awesome fa-envelope" style="color: #fafcff"></i>
-
-          <input placeholder="Enter your mail id " class="login-phone" type="email" name="email" />
-        </div>
-        <div class="signup-system-wrapper">
-          <i class="fa-solid font-awesome fa-lock" style="color: #fafcff"></i>
-
-          <input placeholder="Enter your password" class="login-phone" type="password" name="password" />
-        </div>
-        <div class="signup-system-wrapper">
-          <i class="fa-solid font-awesome fa-unlock-keyhole" style="color: #fafcff"></i>
-
-          <input placeholder="Confirm password" class="login-phone" type="password" name="password" />
-        </div>
-        <!-- <input type="password" /> -->
-
-        <button type="submit" class="next-login-btn">Next</button>
-      </div>
-    </form>
   </div>
-  <!-- search bar section  -->
-  <section class="search-bar-wrapper">
-    <div class="search-bar-mini-wrapper">
-      <div class="main-search-bar-container">
-        <i class="fa-solid fa-magnifying-glass fa-lg main-seach-icon"></i>
-        <span onclick="closeSearchbar()" class="close-search-bar-icon">&#10006;</span>
-        <div class="input-entry-wrap">
-          <input placeholder="Search for a Web Shows, Movie & Genre etc" class="anime-search-function" type="text" />
-        </div>
-      </div>
-    </div>
-    <div class="content-category-wrapper">
-      <h1 id="search-category-heading">Search By Category</h1>
-      <div class="main-contnet-wrapper">
-        <a class="content-image-type" href="#">
-          <img src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/web-shows.png" alt="" />
-          <span> dramatic </span>
-        </a>
-        <a class="content-image-type" href="#">
-          <img src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/movies.png" alt="" />
-          <span> action </span>
-        </a>
-        <a class="content-image-type" href="#">
-          <img src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/shorts.png" alt="" />
-          <span> romantic </span>
-        </a>
-        <a class="content-image-type" href="#">
-          <img src="https://assets-6.mxplay.com/static/mxoneweb/desktop/images/search-page/live-tv.png" alt="" />
-          <span> comedy </span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- slider part -->
-  <section class="banner-container">
-    <div class="owl-carousel owl-theme">
-      <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test3.jpg' %}" alt="">
-      </div>
-      <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test4.jpg' %}" alt="">
-      </div>
-      <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test5.jpg' %}" alt="">
-      </div>
-      <div class="item carousel-item">
-        <img src="{% static 'AnimaBlend/assets/images/test6.jpg' %}" alt="">
-      </div>
-    </div>
-    </div>
-  </section>
 
-  <!-- main div of body  -->
-  <section class="card-main-wrapper">
-    <div class="card-container ">
-      <div class=" card-body ">
-        <div class="card-imgbox ">
-          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
+  {% comment %} nav_bar_css_end_here {% endcomment %}
+
+  {% comment %} main_html_start_here {% endcomment %}
+
+  <div class="home-container">
+
+    <div class="carousel-container">
+      {% for i in slider_animes %}
+      <div class="carousel-slide" style="background-image: url('{{ i.wallpaper }}');">
+        <div class="carousel-slide-cover">
+          <div class="carousel-content">
+            <h1>{{ i.title }}</h1>
+            <div class="meta-info">
+              <span>📺 TV</span>
+              <span>Episode: {{ i.episode.count }}</span>
+            </div>
+            <p>{{ i.description|truncatewords:20 }}</p>
+            <div class="home-button">
+              <a href="{% url 'play_one' i.id %}"><button class="watch-now" role="button">▶ Watch Now</button></a>
+            </div>
+          </div>
         </div>
-        <div class="content ">
-          <a class="anime-button " href="details">watch now</a>
-          <!-- <button class="anime-button btn3xs"> </button> -->
-          <!-- <a href="#">read more </a> -->
-        </div>
-        <h2 class="anime-name">NARUTO</h2>
       </div>
-    </div>
-    <div class="card-container ">
-      <div class=" card-body ">
-        <div class="card-imgbox ">
-          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
-        </div>
-        <div class="content ">
-          <a class="anime-button " href="play">watch now</a>
-          <!-- <button class="anime-button btn3xs"> </button> -->
-          <!-- <a href="#">read more </a> -->
-        </div>
-        <h2 class="anime-name">NARUTO</h2>
-      </div>
-    </div>
-    <div class="card-container ">
-      <div class=" card-body ">
-        <div class="card-imgbox ">
-          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
-        </div>
-        <div class="content ">
-          <a class="anime-button " href="play">watch now</a>
-          <!-- <button class="anime-button btn3xs"> </button> -->
-          <!-- <a href="#">read more </a> -->
-        </div>
-        <h2 class="anime-name">NARUTO</h2>
-      </div>
-    </div>
-    <div class="card-container ">
-      <div class=" card-body ">
-        <div class="card-imgbox ">
-          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
-        </div>
-        <div class="content ">
-          <a class="anime-button " href="play">watch now </a>
-          <!-- <button class="anime-button btn3xs"> </button> -->
-          <!-- <a href="#">read more </a> -->
-        </div>
-        <h2 class="anime-name">NARUTO</h2>
-      </div>
-    </div>
-    <div class="card-container ">
-      <div class=" card-body ">
-        <div class="card-imgbox ">
-          <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
-        </div>
-        <div class="content ">
-          <a class="anime-button " href="play">watch now</a>
-          <!-- <button class="anime-button btn3xs"> </button> -->
-          <!-- <a href="#">read more </a> -->
-        </div>
-        <h2 class="anime-name">NARUTO</h2>
-      </div>
+      {% endfor %}
+      
+      <button class="prev-btn">❮</button>
+      <button class="next-btn">❯</button>
     </div>
 
-  </section>
 
+  </div>
 
-  <!-- 
-  <section class="card-main-wrapper">
-    <div class="card-container "  >
-      <div class="card-imgbox ">
-        <img class="card-img " src="{% static 'AnimaBlend/assets/cards-images/card-img2.jpg' %}" alt="">
-      </div>
-      <div class="card-body">
-        <h2>NARUTO</h2>
-      </div>
-    </div> -->
-
-  </section>
-  <button class="anime-button btn3xs"><a href="play">watch now</a></button>
-
-  <!-- ///////////////////////////////////////////////////////// -->
-
-
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script type="text/javascript">
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      dots: true,
-      autoplay: true,
-      autoplayTimeout: 2500,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 1
-        }
-      }
-    })
-  </script>
-
-  <!-- nav bar js part  -->
-  <script src="{% static 'AnimaBlend/Project%20Js/script.js' %}"></script>
-  <script src="{% static 'AnimaBlend/Project%20Js/myslick.js' %}"></script>
-
+  <script src="{% static "AnimaBlend/js/home.js" %}"></script>
 </body>
-
 </html>

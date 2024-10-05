@@ -4,8 +4,24 @@ from django.db.models import Count
 
 # Create your views here.
 
+slider_a="One Piece"
+slider_b="Attack on Titan"
+slider_c="Death Note"
+slider_d="Haikyuu season 1"
+slider_e="Vinland Saga Season 1"
+
+def slider():
+    slider_anime = []
+    slider_anime.append(Anime.objects.get(title=slider_a))
+    slider_anime.append(Anime.objects.get(title=slider_b))
+    slider_anime.append(Anime.objects.get(title=slider_c))
+    slider_anime.append(Anime.objects.get(title=slider_d))
+    slider_anime.append(Anime.objects.get(title=slider_e))
+    return slider_anime
+
 def home(request):
-    return render(request,'AnimaBlend/home.html')
+    slider_animes = slider()
+    return render(request,'AnimaBlend/home.html', { 'slider_animes': slider_animes})
 
 def index(request):
     return render(request, 'AnimaBlend/index.html')

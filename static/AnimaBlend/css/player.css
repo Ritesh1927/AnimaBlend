@@ -1,4 +1,27 @@
 /* Container for the video */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+a, button {
+  -webkit-tap-highlight-color: transparent;  
+  -webkit-user-select: none;                 
+  user-select: none;                         
+  touch-action: manipulation;               
+}
+
+a:focus, a:active, button:focus, button:active {
+  outline: none;
+  box-shadow: none;
+  background-color: inherit;   
+}
+
+
+
 .video-container {
   margin: auto;
   position: relative;
@@ -115,8 +138,6 @@ video {
 
 /* Additional fullscreen adjustments */
 .fullscreen .video-container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column; /* Ensure stacking of elements */
 }
@@ -126,6 +147,15 @@ video {
   height: 100%;
   transition: width 0.3s ease; /* Smooth progress bar update */
 }
+
+/* Ensure the video fits the screen in fullscreen landscape mode */
+.fullscreen video {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Scale the video to cover the entire screen */
+  overflow: hidden; /* Prevent any overflow */
+}
+
 
 /* responsive_css_starts_here */
 @media only screen and (max-width: 600px) {
@@ -181,3 +211,18 @@ video {
     visibility: hidden;
   }
 }
+
+
+/* For landscape mode on small devices */
+@media only screen and (orientation: landscape) {
+  .fullscreen video {
+    height: 100%;
+    width: auto;
+    margin: auto;
+  }
+}
+
+
+
+/* full_screen_css_for_unsupported_browsers */
+
