@@ -7,6 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="{% static "AnimaBlend/css/indexcss.css" %}">
   <link rel="stylesheet" href="{% static "AnimaBlend/css/home.css" %}">
+  <link rel="stylesheet" href="{% static "AnimaBlend/css/play.css" %}">
 </head>
 <body>
   
@@ -61,7 +62,7 @@
             <h1>{{ i.title }}</h1>
             <div class="meta-info">
               <span>📺 TV</span>
-              <span>Episode: {{ i.episode.count }}</span>
+              <span>Episodes: {{ i.episode.count }}</span>
             </div>
             <p>{{ i.description|truncatewords:20 }}</p>
             <div class="home-button">
@@ -77,8 +78,126 @@
     </div>
 
 
+    {% comment %} monthly_trending_html_starts_here {% endcomment %}
+
+      <div class="trending-card-slider-section">
+        <div class="trending-heading">Monthly Trending</div>
+        <div class="home-card-slider-wrapper first-slider">
+          <button class="home-card-prev">&#10094;</button>
+          <div class="home-card-slider-container">
+            <div class="home-card-slider">
+              <!-- Card 1 -->
+            {% for anime in monthly %}
+            <a href="{% url "details" anime.id %}">
+            <div class="home-card">
+              <div class="home-card-image">
+                <img src="{{ anime.thumbnail }}" alt="Show Image">
+              </div>
+              {% if anime.title|length > 15 %}
+              <div class="home-card-title">{{ anime.title|slice:":15" }}...</div>
+              {% else %}
+              <div class="home-card-title">{{ anime.title }}</div>
+              {% endif %}
+              <div class="home-card-episodes">Episodes: {{ anime.episode.count }}</div>
+            </div>
+            </a>
+            {% endfor %}
+              <!-- Repeat the card structure for more items -->
+            </div>
+          </div>
+          <button class="home-card-next">&#10095;</button>
+        </div>
+      </div>
+
+    {% comment %} All_time_best_anime_css_starts_here {% endcomment %}
+
+    <div class="trending-card-slider-section">
+      <div class="trending-heading">Top Rated</div>
+      <div class="home-card-slider-wrapper first-slider">
+        <button class="home-card-prev">&#10094;</button>
+        <div class="home-card-slider-container">
+          <div class="home-card-slider">
+            <!-- Card 1 -->
+          {% for anime in all_time %}
+          <a href="{% url "details" anime.id %}">
+          <div class="home-card">
+            <div class="home-card-image">
+              <img src="{{ anime.thumbnail }}" alt="Show Image">
+            </div>
+            {% if anime.title|length > 15 %}
+            <div class="home-card-title">{{ anime.title|slice:":15" }}...</div>
+            {% else %}
+            <div class="home-card-title">{{ anime.title }}</div>
+            {% endif %}
+            <div class="home-card-episodes">Episodes: {{ anime.episode.count }}</div>
+          </div>
+          </a>
+          {% endfor %}
+            <!-- Repeat the card structure for more items -->
+          </div>
+        </div>
+        <button class="home-card-next">&#10095;</button>
+      </div>
+    </div>
+      
+
+  {% comment %} random_anime_html_starts_here {% endcomment %}
+
+  <div class="trending-card-slider-section">
+    <div class="trending-heading">Random Anime</div>
+    <div class="home-card-slider-wrapper first-slider">
+      <button class="home-card-prev">&#10094;</button>
+      <div class="home-card-slider-container">
+        <div class="home-card-slider">
+          <!-- Card 1 -->
+        {% for anime in random_anime %}
+        <a href="{% url "details" anime.id %}">
+        <div class="home-card">
+          <div class="home-card-image">
+            <img src="{{ anime.thumbnail }}" alt="Show Image">
+          </div>
+          {% if anime.title|length > 15 %}
+          <div class="home-card-title">{{ anime.title|slice:":15" }}...</div>
+          {% else %}
+          <div class="home-card-title">{{ anime.title }}</div>
+          {% endif %}
+          <div class="home-card-episodes">Episodes: {{ anime.episode.count }}</div>
+        </div>
+        </a>
+        {% endfor %}
+          <!-- Repeat the card structure for more items -->
+        </div>
+      </div>
+      <button class="home-card-next">&#10095;</button>
+    </div>
   </div>
 
-  <script src="{% static "AnimaBlend/js/home.js" %}"></script>
+    <div class="play-footer">
+      <div class="footer-head"><span class="pink">Dic</span><span class="white">tators</span></div>
+      <hr width="100%">
+      <span class="az-head">A-Z LIST</span>
+      <span class="az-divide">|</span>
+      <span class="az-tail">Searching the anime list alphabetically from A to Z </span>
+      <div class="alphabets">
+        {% for i in alphabet %}
+        <div class="alphabet-box">
+          <a href="{% url 'search' %}?query={{ i }}">{{ i }}</a>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="footer-description">
+        Animablend is a vibrant platform where anime lovers can come together to watch, discover, and discuss their favorite 
+        shows. Whether you're a seasoned anime enthusiast or just starting your journey, Animablend offers a seamless viewing 
+        experience with a vast library of shows to explore. Our community-driven environment allows fans to connect, share 
+        recommendations, and engage in meaningful discussions. At Animablend, we are all about bringing people closer through 
+        their shared passion for anime, one episode at a time.
+      </div>
+      <div class="play-footer-main">&#169 2024 Dictators All rights reserved</div>
+    </div>
+
+  </div>
+
+  <script src="{% static "AnimaBlend/js/home-card-slider.js" %}"></script>
+  <script src="{% static "AnimaBlend/js/home-main-slider.js" %}"></script>
 </body>
 </html>

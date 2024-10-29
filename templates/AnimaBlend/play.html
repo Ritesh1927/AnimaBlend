@@ -90,23 +90,29 @@
               </div>
             </div>
             
-            <div class="post-video-details">
-              <div class="play-meta">
-                <div class="play-meta-anime">{{ current_episode.anime }}</div>
-                <div class="play-meta-ep">Episode {{ current_episode.episode_number }} : {{ current_episode.title }}</div>
-              </div>
-              <div class="auto-play">
-                AutoPlay
-                <label class="switch">
-                  <input type="checkbox" id="autoplay-toggle" checked>
-                  <span class="slider"></span>
-                </label>
-              </div>
-            </div>
             
             
             
           </div>
+
+
+
+          <div class="post-video-details">
+            <div class="play-meta">
+              <div class="play-meta-anime">{{ current_episode.anime }}</div>
+              <div class="play-meta-ep">Episode {{ current_episode.episode_number }} : {{ current_episode.title }}</div>
+            </div>
+            <div class="auto-play">
+              AutoPlay
+              <label class="switch">
+                <input type="checkbox" id="autoplay-toggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+
+          
           <div class="play-division">Episodes</div>
           <div class="all-episodes">
             {% for ep in episodes %}

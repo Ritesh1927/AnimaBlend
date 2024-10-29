@@ -25,15 +25,17 @@ a:focus, a:active, button:focus, button:active {
 .video-container {
   margin: auto;
   position: relative;
-  /* max-width: 800px; */
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   background-color: #000;
 }
 
 /* Video element styling */
 video {
-  width: 100%;
+  max-width: 100%;
+  height: 100%;
   display: block;
+  margin: auto;
 }
 
 /* Wrapper for controls and progress bar in normal screen */
@@ -158,6 +160,7 @@ video {
 
 
 /* responsive_css_starts_here */
+
 @media only screen and (max-width: 600px) {
   /* Reduce button sizes and padding */
   .controls {
