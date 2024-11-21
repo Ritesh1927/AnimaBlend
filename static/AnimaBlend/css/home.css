@@ -4,19 +4,15 @@ body {
   font-family: Arial, sans-serif;
   background-color: #fff;
   box-sizing: border-box;
+  width: 100%;
 }
 
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
 
 .home-container {
-  /* background-color: #474747; */
   background-color: rgba(176, 224, 230, 0.132);
+  /* background-color: blue; */
   margin: 0px 2px 2px 2px;
-  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .carousel-container {
@@ -25,7 +21,7 @@ body {
   display: flex;
   /* position: relative; */
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 .carousel-slide {
@@ -50,6 +46,7 @@ body {
   flex: 1;
   border-radius: 12px;
   padding: 10px 20px;
+  font-size: 40px;
 }
 
 .carousel-image img {
@@ -58,20 +55,20 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
   margin: 10px 0;
+  font-size: 1em;
 }
 
 .meta-info span {
   margin-right: 10px;
-  font-size: 0.9rem;
+  font-size: 0.38em;
   color: #b8b8d0;
 }
 
 p {
   margin: 20px 0;
   color: #aaa;
-  font-size: 1rem;
+  font-size: 0.40em;
 }
 
 /* .watch-now {
@@ -121,12 +118,15 @@ p {
 /* card_slider_section hiha */
 
 .trending-card-slider-section{
-  margin: 50px 0px 0px 0px;
+  margin: 80px 0px 0px 0px;
+  /* box-sizing: border-box; */
+}
+.trending-card-slider-section::before, .trending-card-slider-section::after {
+  box-sizing: border-box;
 }
 
 .trending-heading{
   margin: 0px 0px 20px 20px;
-  /* color: #f1f1f1; */
   color: #333;
   font-size: 20px;
   font-weight: 800;
@@ -135,7 +135,7 @@ p {
 /* Slider container */
 .home-card-slider-wrapper{
   position: relative;
-  width: 88vw;
+  width: 88dvw;
   margin: auto;
   display: flex;
   align-items: center;
@@ -143,40 +143,46 @@ p {
 
 .home-card-slider-container {
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
+}
+.home-card-slider-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Slider wrapper */
 .home-card-slider {
-  padding: 10px 0px;
   display: flex;
   transition: transform 0.5s ease;
-  gap: 40px; /* Adjust the gap between the cards */
+}
+
+/* home-card-wrapper */
+
+.home-card-wrapper{
+  flex: 0 0 24%; 
+  padding: 0.5%;
+  /* background-color: lightseagreen; */
 }
 
 .home-card-slider a{
   text-decoration: none;
-  flex: 0 0 19.66vw; /* Flex-basis for one card */
 }
 
 /* Card styles */
+
 .home-card {
   width: 100%;
-  height: 28vw;
+  height: 28dvw;
   border-radius: 8px;
   overflow: hidden;
   font-family: Arial, sans-serif;
   /* background-color: #ea4c89; */
-  background-color: #EE539B;
-  box-shadow: 0 0 10px gray;
+  background-color: #ea4c;
+  box-shadow: 0 0 5px gray;
   text-align: center;
   padding: 0px;
 }
 .home-card:hover {
-  background-color: #ea4c;
-  .home-card-episodes{
-    /* color: #708; */
-  }
+  background-color: #ea4c89;
 }
 
 .home-card img {
@@ -185,15 +191,14 @@ p {
   display: block;
 }
 .home-card-title {
-  font-size: 1.43vw;
+  font-size: 1.43dvw;
   /* color: #333; */
   color: #fff;
   font-weight: bold;
   margin: 10px 0;
-  overflow: hidden;
 }
 .home-card-episodes {
-  font-size: 1.1vw;
+  font-size: 1.1dvw;
   /* color: #666; */
   /* color: #D3D3D3; */
   color: rgba(51, 51, 51, 0.7);
@@ -211,8 +216,10 @@ p {
 
 /* Navigation buttons */
 .home-card-prev, .home-card-next {
-  background-color: #333;
-  color: #f1f1f1;
+  /* background-color: #333; */
+  /* color: #f1f1f1; */
+  background-color: #b8b8d0;
+  color: #333;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -228,15 +235,84 @@ p {
 .home-card-next {
   right: -35px;
 }
-.home-card-prev:hover, .home-card-next:hover {
-  background-color: #444;
+.home-card-prev:hover, .home-card-next:hover, .home-card-prev:focus, .home-card-next:focus {
+  background-color: #b8b8d0;
 }
 
 
 /* responsive_css_starts_here */
 
-@media (max-width:1024px) {
+@media (max-width:1000px) {
   .home-card-prev, .home-card-next {
     visibility: hidden;
+  }
+}
+
+@media (max-width:768px){
+  .home-container{
+    overflow-x: hidden;
+  }
+  .carousel-container{
+    max-height: 65dvw;
+    border-radius: 8px;
+  }
+
+  .prev-btn, .next-btn{
+    display: none;
+  }
+
+  .carousel-content{
+    font-size: 25px;
+  }
+  .carousel-slide-cover{
+    padding: 10px 5px;
+  }
+
+  h1 {
+    margin: 4px 0;
+  }
+  
+  .meta-info span {
+    margin-right: 10px;
+  }
+  
+  p {
+    margin: 9px 0;
+  }
+
+  .watch-now{
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .trending-heading{
+    font-size: 14px;
+    margin: 0px 0px 15px 15px;
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .home-card-slider-wrapper{
+    width: 99%;
+  }
+  .home-card-wrapper{
+    flex: 0 0 32%; 
+    padding: 0.66666%;
+  }
+  .home-card{
+    height: 50vw;
+    box-shadow: 0 0 2px gray;
+    border-radius: 4px;
+  }
+  .home-card-image img{
+    border-radius: 4px;
+  }
+  .home-card-title{
+    font-size: 12px;
+    margin: 5px 0px;
+  }
+  .home-card-episodes{
+    margin-bottom: 0px;
+    font-size: 7px;
   }
 }

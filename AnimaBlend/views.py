@@ -36,7 +36,8 @@ def home(request):
         best_of_all_times[i] = Anime.objects.get(title=best_of_all_times[i])
 
     random_anime = fetch_random_anime()
-    return render(request,'AnimaBlend/home.html', {'slider_animes': slider_animes, 'monthly': monthly_trendings, 'all_time':best_of_all_times, 'random_anime':random_anime})
+    alphabet = [chr(i) for i in range(65, 91)]
+    return render(request,'AnimaBlend/home.html', {'slider_animes': slider_animes, 'monthly': monthly_trendings, 'all_time':best_of_all_times, 'random_anime':random_anime, 'alphabet': alphabet})
 
 def index(request):
     return render(request, 'AnimaBlend/index.html')
@@ -65,11 +66,8 @@ def search(request):
     params = {'animes': animes}
     return render(request, 'AnimaBlend/search.html', params)
 
+def blog(request):
+    return render(request, 'AnimaBlend/blog.html')
 
 # admin_sub-domains
 
-cloudinary.config(
-    cloud_name='dp4j1c8nq',
-    api_key='637689649696671',
-    api_secret='ek8CWfp6hYwDhwWZbNu3LYTPzFQ'
-)

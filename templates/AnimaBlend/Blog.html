@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static "AnimaBlend/css/indexcss.css" %}">
+  </head>
+  <body>
+    {% comment %} nav_bar_css_starts_here {% endcomment %}
+
+  <div class="full-nav">
+    <div class="branding-nav">
+      <span class="dic">Dic</span><span class="tators">tators</span>
+    </div>
+    <input type="checkbox" id="nav-check" hidden />
+    <nav class="navbar">
+      <div class="branding-nav-mobile">
+        <span class="dic">Dic</span><span class="tators">tators</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="" class="active">AnimaBlog</a></li>
+        <li><a href="/home">AnimaBlend</a></li>
+        <li>
+          <a href="/"
+            ><img src="{% static "AnimaBlend/assets/index-images/zoro-logo.png" %}"
+            class="debian"></a
+          >
+        </li>
+        <li><a href="/">Community</a></li>
+        <li><a href="/">Acount</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form name="search-form" method="get" action="/search">
+        <input type="text" placeholder="Search..." name="search" />
+        <button type="submit">Go</button>
+      </form>
+      <label for="nav-check">
+        <div class="menu">
+          <img src="{% static "AnimaBlend/assets/index-images/menu.png" %}">
+        </div>
+      </label>
+    </div>
+  </div>
+
+  {% comment %} nav_bar_css_end_here {% endcomment %}
+
+  {% comment %} login div html starts here {% endcomment %}
+
+  
+
+  {% comment %} login div html ends here {% endcomment %}
+
+  </body>
+</html>

@@ -8,6 +8,9 @@ class Anime(models.Model):
     thumbnail = models.CharField(max_length=200)
     wallpaper = models.CharField(max_length=200, blank=True)
 
+    class Meta: 
+        db_table = 'animablend_anime'
+
     def __str__(self):
         return self.title
 
@@ -20,6 +23,7 @@ class Episode(models.Model):
 
     class Meta:
         ordering = ['episode_number']  
+        db_table = 'animablend_episode'
 
     def __str__(self):
         return f"{self.anime.title} - Episode {self.episode_number}: {self.title}"

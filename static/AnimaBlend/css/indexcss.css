@@ -341,6 +341,7 @@ body {
 @media (max-width:800px) {
   .full-nav{
     justify-content: space-between;
+    border-radius: 8px;
   }
   .branding-nav{
     width: 50%;
