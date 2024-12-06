@@ -10,6 +10,7 @@
     {% comment %} <link rel="stylesheet" href="{% static 'AnimaBlend/css/details.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'AnimaBlend/css/play.css' %}" />
     <link rel="stylesheet" href="{% static 'AnimaBlend/css/player.css' %}" />
+    <link rel="stylesheet" href="{% static 'AnimaBlend/css/login.css' %}" />
 
   </head>
 
@@ -34,7 +35,7 @@
             >
           </li>
           <li><a href="/">Community</a></li>
-          <li><a href="/">Acount</a></li>
+          <li><span class="account">Account</span></li>
         </ul>
       </nav>
       <div class="search">
@@ -153,6 +154,82 @@
         </div>
     </div>
 
+
+
+{% comment %} ---------------------------------------------------------------------------------------------------------- {% endcomment %}
+
+{% comment %} here======================================================= {% endcomment %}
+{% comment %} login================ {% endcomment %}
+{% comment %} html+++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+<div class="login-container">
+  <div class="login-main">
+    <span class="login-close"><img src="{% static "AnimaBlend/assets/icons/close.png" %}" alt="cross"></span>
+    <div class="login-content login">
+      <h2>LOGIN</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon"><img src="{% static "AnimaBlend/assets/icons/mail.svg" %}" alt=""></span>
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="{% static "AnimaBlend/assets/icons/pass.png" %}" alt=""></span>
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label> <input type="checkbox">Remember me</label>
+          <a href="#">Forgot Password</a>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+        <div class="login-register">
+          <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+
+    {% comment %} registration part -------------------- {% endcomment %}
+
+    <div class="login-content register">
+      <h2>Registration</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon"><img src="{% static "AnimaBlend/assets/icons/user.png" %}" alt=""></span>
+          <input type="text" required>
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="{% static "AnimaBlend/assets/icons/mail.svg" %}" alt=""></span>
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="{% static "AnimaBlend/assets/icons/pass.png" %}" alt=""></span>
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label> <input type="checkbox">I agree to the terms and conditions</label>
+        </div>
+        <button type="submit" class="login-btn">Register</button>
+        <div class="login-register">
+          <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+{% comment %} //////////////////////////////////////////////////////////// {% endcomment %}
+{% comment %} end login {% endcomment %}
+{% comment %} hehe -------------------________________________________========================== {% endcomment %}
+
+
+
+
+
     <script>
       const video_1 = document.getElementById('video');
 const autoplayToggle = document.getElementById('autoplay-toggle');
@@ -169,5 +246,6 @@ video_1.addEventListener('ended', function() {
     </script>
     {% comment %} <script src="{% static "AnimaBlend/js/play.js" %}"></script> {% endcomment %}
     <script src="{% static "AnimaBlend/js/player.js" %}"></script>
+    <script src="{% static "AnimaBlend/js/login.js" %}"></script>
   </body>
 </html>

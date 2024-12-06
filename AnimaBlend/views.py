@@ -4,10 +4,7 @@ from django.db.models import Count
 from django.db import models
 import random
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-import uuid
+
 
 # Create your views here.
 

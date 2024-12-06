@@ -24,7 +24,7 @@ body {
   background-color: #333;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 9;
 }
 .branding-nav-mobile{
   display: none;
