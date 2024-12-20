@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{% static "AnimaBlend/css/indexcss.css" %}">
     <link rel="stylesheet" href="{% static "AnimaBlend/css/login.css" %}">
     <link rel="stylesheet" href="{% static "AnimaBlend/css/play.css" %}">
+    <link rel="stylesheet" href="{% static "AnimaBlend/css/latest.css" %}">
+    <link rel="stylesheet" href="{% static "AnimaBlend/css/home.css" %}">
   </head>
   <body>
     {% comment %} nav_bar_css_starts_here {% endcomment %}
@@ -22,7 +24,7 @@
         <span class="dic">Dic</span><span class="tators">tators</span>
       </div>
       <ul class="nav-links">
-        <li><a href="" class="active">AnimaBlog</a></li>
+        <li><a href="/blog">AnimaBlog</a></li>
         <li><a href="/home">AnimaBlend</a></li>
         <li>
           <a href="/"
@@ -30,7 +32,7 @@
             class="debian"></a
           >
         </li>
-        <li><a href="/latest">Latest</a></li>
+        <li><a href="/latest" class="active">Latest</a></li>
         <li><span class="account">Account</span></li>
       </ul>
     </nav>
@@ -49,35 +51,62 @@
 
   {% comment %} nav_bar_html_end_here {% endcomment %}
 
+<div class="latest-main">
 
-
-{% comment %} ------------------------------ Footer Section ------------------------------------------ {% endcomment %}
-<div class="play-footer">
-  <div class="footer-head"><span class="pink">Dic</span><span class="white">tators</span></div>
-  <hr width="100%">
-  <span class="az-head">A-Z LIST</span>
-  <span class="az-divide">|</span>
-  <span class="az-tail">Searching the anime list alphabetically from A to Z </span>
-  <div class="alphabets">
-    {% for i in alphabet %}
-    <div class="alphabet-box">
-      <a href="{% url 'search' %}?query={{ i }}">{{ i }}</a>
+    <div class="latest-header">
+        Latest Episodes - 
     </div>
+
+    
+    {% for episode in episodes %}
+        <div class="latest-box">
+            <div class="latest-poster">
+                <img src="{{ episode.anime.thumbnail }}" alt="">
+            </div>
+            <div class="latest-content">
+                <div class="latest-content-title">
+                    📺 {{ episode.anime.title }}
+                </div>
+                <div class="latest-content-episode">
+                    Episode - {{ episode.episode_number }} : {{ episode.title }}
+                </div>
+                <div class="latest-content-description">{{ episode.anime.description }}</div>
+                <div class="home-button">
+                    <a href="{% url 'play' episode.anime.id episode.episode_number %}"><button class="watch-now" role="button">▶ Watch Now</button></a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
-  </div>
-  <div class="footer-description">
-    Animablend is a vibrant platform where anime lovers can come together to watch, discover, and discuss their favorite 
-    shows. Whether you're a seasoned anime enthusiast or just starting your journey, Animablend offers a seamless viewing 
-    experience with a vast library of shows to explore. Our community-driven environment allows fans to connect, share 
-    recommendations, and engage in meaningful discussions. At Animablend, we are all about bringing people closer through 
-    their shared passion for anime, one episode at a time.
-  </div>
-  <div class="play-footer-main">&#169 2024 Dictators All rights reserved</div>
+    
+    {% comment %} ------------------------------ Footer Section ------------------------------------------ {% endcomment %}
+    <div class="play-footer">
+        <div class="footer-head"><span class="pink">Dic</span><span class="white">tators</span></div>
+        <hr width="100%">
+        <span class="az-head">A-Z LIST</span>
+        <span class="az-divide">|</span>
+        <span class="az-tail">Searching the anime list alphabetically from A to Z </span>
+        <div class="alphabets">
+            {% for i in alphabet %}
+            <div class="alphabet-box">
+                <a href="{% url 'search' %}?query={{ i }}">{{ i }}</a>
+            </div>
+            {% endfor %}
+    </div>
+    <div class="footer-description">
+        Animablend is a vibrant platform where anime lovers can come together to watch, discover, and discuss their favorite 
+        shows. Whether you're a seasoned anime enthusiast or just starting your journey, Animablend offers a seamless viewing 
+        experience with a vast library of shows to explore. Our community-driven environment allows fans to connect, share 
+        recommendations, and engage in meaningful discussions. At Animablend, we are all about bringing people closer through 
+        their shared passion for anime, one episode at a time.
+    </div>
+    <div class="play-footer-main">&#169 2024 Dictators All rights reserved</div>
 </div>
 
 {% comment %} -------------------==================== Footer Section Ends Here ========================---------------------- {% endcomment %}
 
-
+</div>  
+{% comment %} latest main closing {% endcomment %}
+  
 
 
   {% comment %} login div html starts here {% endcomment %}

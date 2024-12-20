@@ -10,4 +10,5 @@ urlpatterns = [
     path('anime/<int:anime_id>/play/', views.play, name='play_one'),
     path('anime/<int:anime_id>/play/<int:episode_number>/', views.play, name='play'),
     path('blog', views.blog, name='blog'),
+    path('latest', views.latest, name='latest'),
 ]

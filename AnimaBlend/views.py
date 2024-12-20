@@ -64,7 +64,13 @@ def search(request):
     return render(request, 'AnimaBlend/search.html', params)
 
 def blog(request):
-    return render(request, 'AnimaBlend/blog.html')
+    alphabet = [chr(i) for i in range(65, 91)]
+    return render(request, 'AnimaBlend/blog.html', {'alphabet': alphabet})
+
+def latest(request):
+    episodes = Episode.objects.order_by('-id')[:10]
+    alphabet = [chr(i) for i in range(65, 91)]
+    return render(request, 'AnimaBlend/Latest.html', {'alphabet': alphabet, 'episodes': episodes})
 
 # admin_sub-domains
 
