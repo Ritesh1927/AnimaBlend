@@ -16,7 +16,7 @@ body {
 
 .full-nav {
   border: 2px solid #fff;
-  height: 7dvh;
+  height: 7svh;
   padding: 0px 20px;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@ body {
   font-size: 6vw;
   font-weight: bolder;
   font-style: oblique;
-  height: calc(93dvh - 4px);
+  height: calc(93svh - 4px);
 }
 .welcome1{
   width: 50%;
